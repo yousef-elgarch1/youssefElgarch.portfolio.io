@@ -117,19 +117,27 @@ function asideSectionTogglerBtn() {
 
 
 
-
 const translations = {
   "en": {
     "home": {
       "hello": "Hello, my name is",
-      "professionText": "I am a", // Static text
-      "professionTypes": [         // Typed text (dynamic)
-        "Full-Stack Web Developer",
-        "Front-End Programmer",
+      "professionText": "I am a", 
+      "professionTypes": [ 
+        "Junior Developer",
+        "Software Developer",
+        "IT Support Specialist",
+        "IT Analyst",
         "Web Developer",
-        "AI Engineer",
-        "Machine Learning Engineer",
-        "Front-End Programmer"
+        "Front-End Developer",
+        "Junior Systems Administrator",
+        "Junior Data Analyst",
+        "Database Developer",
+        "Quality Assurance (QA) Tester",
+        "Junior IT Consultant",
+        "Junior Cloud Developer",
+        "Cloud Engineer",
+        "DevOps Trainee",
+        "Junior Business Intelligence Developer"
       ],
       "description": "I am a software engineering student at ENSIAS, Rabat, Morocco, specializing in full-stack web development.",
       "name": "Elgarch Youssef",
@@ -150,14 +158,24 @@ const translations = {
     },
     "services": {
       "title": "Services",
-      "items": [
-        "Web Application Development",
-        "Clean Code",
-        "High Fidelity Interfaces",
-        "Responsive Websites",
-        "SEO",
-        "Animations"
-      ]
+       "items": [
+    "Cloud Development & Management",
+    "DevOps Automation",
+    "AI & Machine Learning",
+    "Data Science & Analytics",
+    "Web Application & API Development",
+    "SEO & Web Optimization",
+    "Interactive Animations"
+  ],
+  "descriptions": [
+    "I develop and manage scalable cloud infrastructure to deploy, monitor, and optimize cloud-based applications.",
+    "I automate and streamline the software development lifecycle, integrating CI/CD pipelines to ensure reliable software delivery.",
+    "I build intelligent systems and predictive models using AI and ML techniques, helping businesses make data-driven decisions.",
+    "I analyze complex datasets, extracting actionable insights using data mining, statistical models, and ML algorithms to help businesses optimize operations.",
+    "I design and develop full-stack web applications and RESTful APIs, ensuring performance, scalability, and security in every stage of development.",
+    "I implement SEO strategies and optimize web applications for speed and performance, ensuring higher visibility and better user engagement.",
+    "I create engaging animations and interactive elements that enhance the user experience, making your application feel modern and dynamic."
+  ]
     },
     "portfolio": {
       "title": "Portfolio",
@@ -213,19 +231,28 @@ const translations = {
       "mobile": "Mobile Development",
       "cloud": "Cloud Computing"
     }
-  
   },
   
   "fr": {
     "home": {
       "hello": "Bonjour, je m'appelle",
-      "professionText": "Je suis un", // Static text
-      "professionTypes": [         // Typed text (dynamic)
-        "Développeur Web Full-Stack",
-        "Développeur Front-End",
+      "professionText": "Je suis un",
+      "professionTypes": [
+        "Développeur Junior",
+        "Développeur Logiciel",
+        "Spécialiste Support IT",
+        "Analyste IT",
         "Développeur Web",
-        "Ingénieur en IA",
-        "Ingénieur en Machine Learning"
+        "Développeur Front-End",
+        "Administrateur Systèmes Junior",
+        "Analyste de Données Junior",
+        "Développeur Base de Données",
+        "Testeur Assurance Qualité (QA)",
+        "Consultant IT Junior",
+        "Développeur Cloud Junior",
+        "Ingénieur Cloud",
+        "Stagiaire DevOps",
+        "Développeur Business Intelligence Junior"
       ],
       "description": "Je suis étudiant en génie logiciel à l'ENSIAS, Rabat, Maroc, spécialisé en développement web full-stack.",
       "name": "Elgarch Youssef",
@@ -247,13 +274,23 @@ const translations = {
     "services": {
       "title": "Services",
       "items": [
-        "Développement d'Applications Web",
-        "Code Propre",
-        "Interfaces de Haute Fidélité",
-        "Sites Web Responsives",
-        "SEO",
-        "Animations"
-      ]
+      "Développement et gestion du Cloud",
+      "Automatisation DevOps",
+      "IA et Machine Learning",
+      "Science des données et analytique",
+      "Développement d'applications web et API",
+      "SEO et optimisation web",
+      "Animations interactives"
+    ],
+    "descriptions": [
+      "Je développe et gère une infrastructure cloud évolutive pour déployer, surveiller et optimiser les applications cloud.",
+      "J'automatise et rationalise le cycle de vie du développement logiciel, intégrant des pipelines CI/CD pour assurer une livraison fiable du logiciel.",
+      "Je construis des systèmes intelligents et des modèles prédictifs en utilisant des techniques d'IA et de ML, aidant les entreprises à prendre des décisions basées sur les données.",
+      "J'analyse des ensembles de données complexes, extrayant des informations exploitables à l'aide de l'exploration de données, de modèles statistiques et d'algorithmes de ML pour aider les entreprises à optimiser leurs opérations.",
+      "Je conçois et développe des applications web full-stack et des API RESTful, garantissant la performance, l'évolutivité et la sécurité à chaque étape du développement.",
+      "J'implémente des stratégies SEO et optimise les applications web pour la vitesse et les performances, assurant une meilleure visibilité et un meilleur engagement des utilisateurs.",
+      "Je crée des animations engageantes et des éléments interactifs qui améliorent l'expérience utilisateur, rendant votre application moderne et dynamique."
+    ]
     },
     "portfolio": {
       "title": "Portfolio",
@@ -313,15 +350,25 @@ const translations = {
   "zh": {
     "home": {
       "hello": "你好，我的名字是",
-      "professionText": "我是一名", // Static text
-      "professionTypes": [         // Typed text (dynamic)
-        "全栈开发人员",
-        "前端程序员",
+      "professionText": "我是一名", 
+      "professionTypes": [
+        "初级开发人员",
+        "软件开发人员",
+        "IT支持专家",
+        "IT分析师",
         "Web开发人员",
-        "AI工程师",
-        "机器学习工程师"
+        "前端开发人员",
+        "初级系统管理员",
+        "初级数据分析师",
+        "数据库开发人员",
+        "质量保证（QA）测试员",
+        "初级IT顾问",
+        "初级云开发人员",
+        "云工程师",
+        "DevOps实习生",
+        "初级商业智能开发人员"
       ],
-      "description": "我是在ENSIAS，摩洛哥拉巴特的计算机工程学生，专注于全栈Web开发。",
+      "description": "我是在摩洛哥拉巴特ENSIAS的计算机工程学生，专注于全栈Web开发。",
       "name": "Elgarch Youssef",
       "birthdate": "2002年8月14日",
       "age": "22",
@@ -341,13 +388,23 @@ const translations = {
     "services": {
       "title": "服务",
       "items": [
-        "Web应用开发",
-        "干净的代码",
-        "高保真界面",
-        "响应式网站",
-        "SEO",
-        "动画"
-      ]
+      "云开发与管理",
+      "DevOps自动化",
+      "人工智能与机器学习",
+      "数据科学与分析",
+      "Web应用开发与API",
+      "SEO与Web优化",
+      "互动动画"
+    ],
+    "descriptions": [
+      "我开发并管理可扩展的云基础设施，以部署、监控和优化基于云的应用程序。",
+      "我自动化并简化软件开发生命周期，整合CI/CD管道，确保软件交付的可靠性。",
+      "我使用人工智能和机器学习技术构建智能系统和预测模型，帮助企业做出数据驱动的决策。",
+      "我分析复杂的数据集，通过数据挖掘、统计模型和机器学习算法提取可操作的见解，帮助企业优化运营。",
+      "我设计并开发全栈Web应用和RESTful API，确保在开发的每个阶段都具有性能、可扩展性和安全性。",
+      "我实施SEO策略并优化Web应用程序的速度和性能，确保更高的可见性和更好的用户互动。",
+      "我创建引人入胜的动画和互动元素，提升用户体验，使您的应用程序更具现代感和活力。"
+    ]
     },
     "portfolio": {
       "title": "作品集",
@@ -362,7 +419,7 @@ const translations = {
       "timeline": [
         {
           "date": "2023年9月 - 现在",
-          "title": "软件工程工程学位",
+          "title": "软件工程学位",
           "location": "ENSIAS，摩洛哥拉巴特"
         },
         {
@@ -404,16 +461,27 @@ const translations = {
       "cloud": "云计算"
     }
   },
+
   "ja": {
     "home": {
       "hello": "こんにちは、私の名前は",
-      "professionText": "私は", // Static text
-      "professionTypes": [         // Typed text (dynamic)
-        "フルスタックWeb開発者",
-        "フロントエンドプログラマー",
+      "professionText": "私は", 
+      "professionTypes": [
+        "ジュニア開発者",
+        "ソフトウェア開発者",
+        "ITサポートスペシャリスト",
+        "ITアナリスト",
         "Web開発者",
-        "AIエンジニア",
-        "機械学習エンジニア"
+        "フロントエンド開発者",
+        "ジュニアシステム管理者",
+        "ジュニアデータアナリスト",
+        "データベース開発者",
+        "品質保証（QA）テスター",
+        "ジュニアITコンサルタント",
+        "ジュニアクラウド開発者",
+        "クラウドエンジニア",
+        "DevOpsインターン",
+        "ジュニアビジネスインテリジェンス開発者"
       ],
       "description": "私はENSIAS、ラバト、モロッコでソフトウェア工学の学生で、フルスタックWeb開発を専門としています。",
       "name": "Elgarch Youssef",
@@ -435,13 +503,23 @@ const translations = {
     "services": {
       "title": "サービス",
       "items": [
-        "Webアプリケーション開発",
-        "クリーンコード",
-        "高精度インターフェース",
-        "レスポンシブWebサイト",
-        "SEO",
-        "アニメーション"
-      ]
+      "クラウド開発と管理",
+      "DevOps自動化",
+      "AIおよび機械学習",
+      "データサイエンスおよび分析",
+      "WebアプリケーションとAPI開発",
+      "SEOとWeb最適化",
+      "インタラクティブアニメーション"
+    ],
+    "descriptions": [
+      "クラウドベースのアプリケーションを展開、監視、最適化するために、スケーラブルなクラウドインフラを開発・管理します。",
+      "CI/CDパイプラインを統合して、ソフトウェア開発ライフサイクルを自動化し、信頼性のあるソフトウェアの納品を実現します。",
+      "AIおよびML技術を使用してインテリジェントなシステムと予測モデルを構築し、企業がデータに基づいた意思決定を行えるよう支援します。",
+      "データマイニング、統計モデル、MLアルゴリズムを使用して複雑なデータセットを分析し、企業が運用を最適化できるよう支援します。",
+      "フルスタックWebアプリケーションとRESTful APIを設計・開発し、開発の各段階でパフォーマンス、スケーラビリティ、セキュリティを確保します。",
+      "SEO戦略を実施し、Webアプリケーションの速度とパフォーマンスを最適化して、可視性を高め、ユーザーのエンゲージメントを向上させます。",
+      "ユーザーエクスペリエンスを向上させ、アプリケーションを現代的でダイナミックに感じさせる魅力的なアニメーションとインタラクティブな要素を作成します。"
+    ]
     },
     "portfolio": {
       "title": "ポートフォリオ",
@@ -481,7 +559,7 @@ const translations = {
         }
       ]
     },
-     "nav": {
+    "nav": {
       "home": "ホーム",
       "about": "自己紹介",
       "technologies": "技術",
@@ -497,8 +575,15 @@ const translations = {
       "mobile": "モバイル開発",
       "cloud": "クラウドコンピューティング"
     }
-  }
+  } 
+
 };
+
+
+
+
+
+
 
 function changeLanguage(lang) {
   // Home Section
@@ -543,13 +628,21 @@ function changeLanguage(lang) {
   personalInfoItems.forEach((item, index) => {
     item.innerHTML = `${item.innerHTML.split(":")[0]}: <span>${translations[lang].home[personalInfoKeys[index]]}</span>`;
   });
+// Services Section
+document.querySelector('.service .section-title h2').textContent = translations[lang].services.title;
 
-  // Services Section
-  document.querySelector('.service .section-title h2').textContent = translations[lang].services.title;
-  const serviceItems = document.querySelectorAll('.service-item h4');
-  for (let i = 0; i < serviceItems.length; i++) {
-    serviceItems[i].textContent = translations[lang].services.items[i];
-  }
+// Update service titles
+const serviceItems = document.querySelectorAll('.service-item h4');
+for (let i = 0; i < serviceItems.length; i++) {
+  serviceItems[i].textContent = translations[lang].services.items[i];
+}
+
+// Update service descriptions
+const serviceDescriptions = document.querySelectorAll('.service-item p');
+for (let i = 0; i < serviceDescriptions.length; i++) {
+  serviceDescriptions[i].textContent = translations[lang].services.descriptions[i];
+}
+
 // Update Sidebar Text
 document.querySelector('.aside .nav li:nth-child(1) .nav-text').textContent = translations[lang].nav.home;
 document.querySelector('.aside .nav li:nth-child(2) .nav-text').textContent = translations[lang].nav.about;
