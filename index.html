@@ -21,6 +21,15 @@
 </head>
 
 <body>
+  <!-- Language Selector -->
+  <div class="language-switcher">
+    <select id="language-selector">
+      <option value="en">English</option>
+      <option value="fr">Français</option>
+      <option value="zh">中文</option>
+      <option value="ja">日本語</option>
+    </select>
+  </div>
   <!-- ==== Main Container Start ==== -->
   <div class="main-container">
     <!-- ==== Aside Start ==== -->
@@ -35,24 +44,26 @@
         <span></span>
       </div>
       <ul class="nav">
-        <li>
-          <a href="#home" class="active"><em class="fa fa-home"></em>Home</a>
-        </li>
-        <li>
-          <a href="#about"><em class="fa fa-user"></em>About</a>
-        </li>
-        <li>
-          <a href="#techno"><em class="fa fa-laptop-code"></em>Technologies</a>
-        </li>
-        <li>
-          <a href="#services"><em class="fa fa-list"></em>Services</a>
-        </li>
-        <li>
-          <a href="#portfolio"><em class="fa fa-briefcase"></em>Portfolio</a>
-        </li>
-        <li>
-          <a href="#contact"><em class="fa fa-comments"></em>Contacts</a>
-        </li>
+          <li>
+            <a href="#home" class="active"><em class="fa fa-home"></em> <span class="nav-text">Home</span></a>
+          </li>
+          <li>
+            <a href="#about"><em class="fa fa-user"></em> <span class="nav-text">About</span></a>
+          </li>
+          <li>
+            <a href="#techno"><em class="fa fa-laptop-code"></em> <span class="nav-text">Technologies</span></a>
+          </li>
+          <li>
+            <a href="#services"><em class="fa fa-list"></em> <span class="nav-text">Services</span></a>
+          </li>
+          <li>
+            <a href="#portfolio"><em class="fa fa-briefcase"></em> <span class="nav-text">Portfolio</span></a>
+          </li>
+          <li>
+            <a href="#contact"><em class="fa fa-comments"></em> <span class="nav-text">Contacts</span></a>
+          </li>
+          
+            
       </ul>
     </div>
     <!-- ==== Aside End ==== -->
@@ -68,9 +79,10 @@
                 <span class="name">Elgarch Youssef</span>
               </h3>
               <h3 class="my-profession">
-                I am a <span class="typing">Full-Stack Web Developer</span>
+                <span class="static-profession">I am a</span> <span class="typing">Full-Stack Web Developer</span>
               </h3>
-              <p>
+
+              <p class="description">
                 I am a software engineering student at ENSIAS, Rabat, Morocco, specializing in full-stack web
                 development. I have experience in both front-end and back-end technologies, and I’m passionate about
                 solving real-world problems through software development.
@@ -89,8 +101,8 @@
       <section class="about section" id="about">
         <div class="container">
           <div class="row">
-            <div class="section-title padd-15">
-              <h2>About</h2>
+            <div class="section-title h2 padd-15">
+              <h2>Aboutt</h2>
             </div>
           </div>
           <div class="row">
@@ -103,14 +115,7 @@
                     from ENSIAS, Rabat, Morocco. Currently, I am seeking an internship opportunity to apply my problem-solving
                     skills and technical expertise in full-stack development, machine learning, and web application building.
                   </p>
-                  <p>
-                    I have worked on various projects ranging from web applications to machine learning algorithms, and I
-                    am continuously expanding my skill set through hands-on learning and development.
-                  </p>
-                  <p>
-                    I am passionate about building efficient, user-friendly, and scalable software systems. I aim to apply
-                    my knowledge to real-world applications and contribute to innovative projects.
-                  </p>
+                 
                 </div>
               </div>
               <div class="row">
@@ -632,7 +637,7 @@
             <div class="portfolio-item padd-15">
               <div class="portfolio-item-inner shadow-dark">
                 <div class="portfolio-img">
-                  <a href="https://emersoncarneirodasilva.github.io/website_restaurant/" target="_blank"><img
+                  <a href="https://emersoncarneirodasilva.github.io/" target="_blank"><img
                       src="./images/portfolio/redal.png" alt="redal" /></a>
                 </div>
               </div>
@@ -640,7 +645,7 @@
             <div class="portfolio-item padd-15">
               <div class="portfolio-item-inner shadow-dark">
                 <div class="portfolio-img">
-                  <a href="https://emersoncarneirodasilva.github.io/website_petshop/" target="_blank"><img
+                  <a href="https://emersoncarneirodasilva.github.io/" target="_blank"><img
                       src="./images/portfolio/internlink.jfif" alt="internlink" /></a>
                 </div>
               </div>
@@ -648,7 +653,7 @@
             <div class="portfolio-item padd-15">
               <div class="portfolio-item-inner shadow-dark">
                 <div class="portfolio-img">
-                  <a href="https://emersoncarneirodasilva.github.io/starbucks_clone/" target="_blank"><img
+                  <a href="https://emersoncarneirodasilva.github.io/" target="_blank"><img
                       src="./images/portfolio/starbucks.png" alt="starbucks" /></a>
                 </div>
               </div>
@@ -697,36 +702,38 @@
           <h4 class="contact-sub-title padd-15">
             I WILL BE HAPPY TO RESPOND
           </h4>
-          <!-- ==== Contact Form ==== -->
-          <div class="row">
-            <div class="contact-form padd-15">
-              <div class="row">
-                <div class="form-item col-6 padd-15">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Name" />
-                  </div>
-                </div>
-                <div class="form-item col-6 padd-15">
-                  <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email" />
-                  </div>
-                </div>
-                <div class="form-item col-12 padd-15">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Subject" />
-                  </div>
-                </div>
-                <div class="form-item col-12 padd-15">
-                  <div class="form-group">
-                    <textarea name="" class="form-control" id="" placeholder="Message"></textarea>
-                  </div>
-                </div>
-                <div class="form-item col-12 padd-15">
-                  <button type="submit" class="btn">Send Message</button>
-                </div>
-              </div>
-            </div>
+<form method="POST" action="send_email.php">
+  <div class="row">
+    <div class="contact-form padd-15">
+      <div class="row">
+        <div class="form-item col-6 padd-15">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Name" name="name" required />
           </div>
+        </div>
+        <div class="form-item col-6 padd-15">
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email" name="email" required />
+          </div>
+        </div>
+        <div class="form-item col-12 padd-15">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Subject" name="subject" required />
+          </div>
+        </div>
+        <div class="form-item col-12 padd-15">
+          <div class="form-group">
+            <textarea name="message" class="form-control" placeholder="Message" required></textarea>
+          </div>
+        </div>
+        <div class="form-item col-12 padd-15">
+          <button type="submit" class="btn">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
         </div>
       </section>
       <!-- ==== Contact Section End ==== -->
