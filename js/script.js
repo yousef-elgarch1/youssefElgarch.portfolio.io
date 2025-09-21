@@ -852,6 +852,59 @@ function generateModalContent(project) {
   `;
 }
 
+
+/* ========================= Technologies Filter ========================= */
+const techFilterBtns = document.querySelectorAll('.tech-filter-btn');
+const techCards = document.querySelectorAll('.tech-card');
+
+techFilterBtns.forEach(btn => {
+  btn.addEventListener('click', function() {
+    // Remove active class from all buttons
+    techFilterBtns.forEach(button => button.classList.remove('active'));
+    // Add active class to clicked button
+    this.classList.add('active');
+    
+    const filterValue = this.getAttribute('data-filter');
+    
+    techCards.forEach(card => {
+      if(filterValue === 'all' || card.getAttribute('data-category').includes(filterValue)) {
+        card.classList.remove('hide');
+      } else {
+        card.classList.add('hide');
+      }
+    });
+  });
+});
+
+/* ========================= Animate Progress Bars on Scroll ========================= */
+const observerOptions = {
+  threshold: 0.5,
+  rootMargin: '0px 0px -100px 0px'
+};
+
+const progressObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const progressBars = entry.target.querySelectorAll('.progress-bar');
+      progressBars.forEach(bar => {
+        const width = bar.style.width;
+        bar.style.width = '0%';
+        setTimeout(() => {
+          bar.style.width = width;
+        }, 200);
+      });
+    }
+  });
+}, observerOptions);
+
+// Observe all tech cards
+techCards.forEach(card => {
+  progressObserver.observe(card);
+});
+
+
+
+
 /* ========================= EmailJS Contact Form ========================= */
 // Initialize EmailJS
 (function() {
