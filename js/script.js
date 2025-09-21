@@ -853,55 +853,56 @@ function generateModalContent(project) {
 }
 
 
-/* ========================= Technologies Filter ========================= */
-const techFilterBtns = document.querySelectorAll('.tech-filter-btn');
-const techCards = document.querySelectorAll('.tech-card');
 
-techFilterBtns.forEach(btn => {
-  btn.addEventListener('click', function() {
-    // Remove active class from all buttons
-    techFilterBtns.forEach(button => button.classList.remove('active'));
-    // Add active class to clicked button
-    this.classList.add('active');
+/* ========================= Technologies Filter (Enhanced) ========================= */
+document.addEventListener('DOMContentLoaded', function() {
+  // Wait for DOM to be fully loaded
+  const techFilterBtns = document.querySelectorAll('.tech-filter-btn');
+  const techCards = document.querySelectorAll('.tech-card');
+  
+  console.log('Filter buttons found:', techFilterBtns.length);
+  console.log('Tech cards found:', techCards.length);
+  
+  // Check if elements exist
+  if (techFilterBtns.length === 0 || techCards.length === 0) {
+    console.error('Filter elements not found');
+    return;
+  }
+  
+  techFilterBtns.forEach((btn, index) => {
+    console.log('Adding listener to button:', index, btn.textContent);
     
-    const filterValue = this.getAttribute('data-filter');
-    
-    techCards.forEach(card => {
-      if(filterValue === 'all' || card.getAttribute('data-category').includes(filterValue)) {
-        card.classList.remove('hide');
-      } else {
-        card.classList.add('hide');
-      }
+    btn.addEventListener('click', function() {
+      console.log('Filter button clicked:', this.getAttribute('data-filter'));
+      
+      // Remove active class from all buttons
+      techFilterBtns.forEach(button => button.classList.remove('active'));
+      
+      // Add active class to clicked button
+      this.classList.add('active');
+      
+      const filterValue = this.getAttribute('data-filter');
+      console.log('Filtering by:', filterValue);
+      
+      // Filter tech cards
+      techCards.forEach((card, cardIndex) => {
+        const cardCategories = card.getAttribute('data-category');
+        console.log('Card', cardIndex, 'categories:', cardCategories);
+        
+        if(filterValue === 'all') {
+          card.classList.remove('hide');
+          console.log('Showing card', cardIndex, '(show all)');
+        } else if(cardCategories && cardCategories.includes(filterValue)) {
+          card.classList.remove('hide');
+          console.log('Showing card', cardIndex, '(matches filter)');
+        } else {
+          card.classList.add('hide');
+          console.log('Hiding card', cardIndex, '(no match)');
+        }
+      });
     });
   });
 });
-
-/* ========================= Animate Progress Bars on Scroll ========================= */
-const observerOptions = {
-  threshold: 0.5,
-  rootMargin: '0px 0px -100px 0px'
-};
-
-const progressObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const progressBars = entry.target.querySelectorAll('.progress-bar');
-      progressBars.forEach(bar => {
-        const width = bar.style.width;
-        bar.style.width = '0%';
-        setTimeout(() => {
-          bar.style.width = width;
-        }, 200);
-      });
-    }
-  });
-}, observerOptions);
-
-// Observe all tech cards
-techCards.forEach(card => {
-  progressObserver.observe(card);
-});
-
 
 
 
