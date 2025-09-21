@@ -215,14 +215,14 @@ const translations = {
       "title": "AI Engineer Intern",
       "location": "IAMAI, Dubai, UAE",
       "company": "IAMAI",
-      "logo": "../images/logos/iamai.webp"
+      "logo": "../images/logos/iamai.webp",
     },
     {
       "date": "July 2024 - Aug. 2024", 
       "title": "Full-Stack Developer Intern",
       "location": "REDAL, Rabat, Morocco",
       "company": "REDAL",
-      "logo": "../images/logos/redal.webp"
+      "logo": "../images/logos/redal.webp",
     }
   ]
 },
