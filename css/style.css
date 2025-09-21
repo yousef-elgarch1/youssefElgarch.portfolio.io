@@ -924,9 +924,189 @@ h3.my-profession {
 
 
 /*Technnologies*/
+/* Enhanced filter buttons for more categories */
+.tech-filter-btn {
+  font-size: 13px;
+  padding: 10px 18px;
+  margin: 5px 6px;
+  white-space: nowrap;
+}
+
+/* Better responsive for more filter buttons */
+@media (max-width: 768px) {
+  .tech-filter {
+    text-align: left;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;
+  }
+  
+  .tech-filter-btn {
+    display: inline-block;
+    margin: 5px 4px;
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+}
+
+/* Logo adjustments for different sources */
+.tech-logo {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  border-radius: 8px;
+  padding: 2px;
+}
+
+/* Special handling for logos with backgrounds */
+.tech-card-inner .tech-logo[src*="make.com"],
+.tech-card-inner .tech-logo[src*="n8n"],
+.tech-card-inner .tech-logo[src*="flowiseai"] {
+  background-color: white;
+  padding: 6px;
+  border-radius: 10px;
+}
+
+/* Grid adjustments for more cards */
+@media (max-width: 1200px) {
+  .tech-card {
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* ========================= Enhanced Technology Section Styles ========================= */
+
+/* Search input styling */
+.tech-search {
+  transition: all 0.3s ease;
+  background-color: var(--bg-black-100);
+  color: var(--text-black-900);
+}
+
+.tech-search:focus {
+  border-color: var(--skin-color);
+  box-shadow: 0 0 0 3px rgba(var(--skin-color-rgb), 0.1);
+}
+
+/* Skill stats styling */
+.skill-stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px !important;
+}
+
+.skill-stats span {
+  background-color: var(--bg-black-100);
+  padding: 5px 12px;
+  border-radius: 15px;
+  border: 1px solid var(--bg-black-50);
+  font-size: 13px !important;
+}
+
+/* Expanded card styling */
+.tech-card.expanded .tech-card-inner {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  border-color: var(--skin-color);
+  z-index: 10;
+  position: relative;
+}
+
+.tech-card.expanded .tech-description {
+  max-height: none !important;
+  transition: max-height 0.3s ease;
+}
+
+/* Staggered animation for filter */
+.tech-card {
+  transition: all 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tech-card.hide {
+  opacity: 0;
+  transform: scale(0.8) translateY(20px);
+  pointer-events: none;
+}
+
+/* Logo loading state */
+.tech-logo {
+  transition: all 0.3s ease;
+}
+
+.tech-logo:not([src]) {
+  background-color: var(--bg-black-50);
+  opacity: 0.5;
+}
+
+/* Special category indicators */
+.tech-card[data-category*="expert"] .tech-header::after {
+  content: "⭐";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-size: 16px;
+}
+
+.tech-card[data-category*="automation"] .tech-header::before {
+  content: "🤖";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  font-size: 14px;
+}
+
+/* Mobile enhancements */
+@media (max-width: 768px) {
+  .skill-stats {
+    font-size: 12px !important;
+  }
+  
+  .skill-stats span {
+    margin: 2px !important;
+    padding: 3px 8px;
+    font-size: 11px !important;
+  }
+  
+  .tech-search {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+/* Dark mode support */
+body.dark .tech-search {
+  background-color: var(--bg-black-50);
+  color: var(--text-black-900);
+  border-color: var(--bg-black-50);
+}
+
+body.dark .skill-stats span {
+  background-color: var(--bg-black-50);
+  border-color: var(--bg-black-50);
+}
+
+
+
+
+
+
+
+
+
+
 /* ========================= Modern Technologies Section ========================= */
 .techno .section-title h2 {
-  text-align: center;
   margin-bottom: 50px;
 }
 
