@@ -224,7 +224,9 @@ const translations = {
       "technologies": "Technologies",
       "services": "Services",
       "portfolio": "Portfolio",
-      "contact": "Contacts"
+      "contact": "Contacts",
+      "blog": "Blog",
+      
     },
     "techno": {
       "web": "Web Development",
