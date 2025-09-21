@@ -145,7 +145,7 @@ const translations = {
   "Data Pipeline Engineer",
   "MLOps Engineer"
 ],
-      "description": "I am a software engineering student at ENSIAS, Rabat, Morocco, specializing in full-stack web development.",
+      "description": "3rd-year Software Engineering student at ENSIAS specializing in Data Engineering & AI. I transform complex data challenges into scalable solutions, with proven experience building enterprise-grade systems at IAMAI Dubai and REDAL Morocco",
       "name": "Elgarch Youssef",
       "birthdate": "Aug 14, 2002",
       "age": "22",
@@ -155,8 +155,8 @@ const translations = {
       "phone": "+212 641-881911",
       "city": "Rabat, Morocco",
       "freelance": "Available",
-      "hireMe": "Hire Me",
-      "viewCV": "View CV"
+      "hireMe": "View My Projects",
+      "viewCV": "Download My Resume"
     },
     "about": {
       "title": "About",
