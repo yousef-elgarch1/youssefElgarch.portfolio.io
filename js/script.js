@@ -192,7 +192,7 @@ const translations = {
       "title": "Education",
       "timeline": [
         {
-          "date": "Sept. 2023 - Present",
+          "date": "Sept. 2023 - June. 2026",
           "title": "Engineering Degree in Software Engineering",
           "location": "ENSIAS, Rabat, Morocco"
         },
