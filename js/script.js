@@ -341,7 +341,8 @@ const translations = {
       "technologies": "Technologies",
       "services": "Services",
       "portfolio": "Portfolio",
-      "contact": "Contacts"
+      "contact": "Contacts",
+      "blog": "Blog",
     },
     "techno": {
       "web": "Développement Web",
@@ -455,7 +456,8 @@ const translations = {
       "technologies": "技术",
       "services": "服务",
       "portfolio": "作品集",
-      "contact": "联系方式"
+      "contact": "联系方式",
+      "blog": "Blog",
     },
     "techno": {
       "web": "Web开发",
