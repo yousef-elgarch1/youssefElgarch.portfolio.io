@@ -208,20 +208,38 @@ const translations = {
   ]
 },
     "experience": {
-      "title": "Experience",
-      "timeline": [
-        {
-          "date": "Aug. 2024 - Sept. 2024",
-          "title": "AI Engineer Intern",
-          "location": "IAMAI, Dubai, UAE"
-        },
-        {
-          "date": "July 2024 - Aug. 2024",
-          "title": "Full-Stack Developer Intern",
-          "location": "REDAL, Rabat, Morocco"
-        }
+  "title": "Experience",
+  "timeline": [
+    {
+      "date": "Aug. 2024 - Sept. 2024",
+      "title": "AI Engineer Intern",
+      "location": "IAMAI, Dubai, UAE",
+      "company": "IAMAI",
+      "logo": "./images/logos/iamai-logo.png",
+      "description": "Led development of enterprise AI platform integrating 25+ tools with scalable architecture processing thousands of daily workflows.",
+      "achievements": [
+        "10,000+ daily workflows",
+        "99.2% system reliability", 
+        "JWT authentication",
+        "Real-time notifications"
       ]
     },
+    {
+      "date": "July 2024 - Aug. 2024", 
+      "title": "Full-Stack Developer Intern",
+      "location": "REDAL, Rabat, Morocco",
+      "company": "REDAL",
+      "logo": "./images/logos/redal-logo.png",
+      "description": "Architected full-stack enterprise application serving 200+ users with DocuSign API integration and automated workflows.",
+      "achievements": [
+        "200+ active users",
+        "DocuSign integration",
+        "Docker deployment",
+        "PostgreSQL database"
+      ]
+    }
+  ]
+},
     "nav": {
       "home": "Home",
       "about": "About",
@@ -699,17 +717,26 @@ educationTimeline.innerHTML = educationItems.map(item => `
   </div>
 `).join('');
 
-  // Experience Timeline
-  const experienceTimeline = document.querySelector('.about .experience .timeline');
-  const experienceItems = translations[lang].experience.timeline;
-  experienceTimeline.innerHTML = experienceItems.map(item => `
-    <div class="timeline-item">
-      <div class="circle-dot"></div>
-      <h3 class="timeline-date"><em class="fa fa-calendar"></em> ${item.date}</h3>
-      <h4 class="timeline-title">${item.title}</h4>
-      <p class="timeline-text">${item.location}</p>
+// Experience Timeline
+const experienceTimeline = document.querySelector('.about .experience .timeline');
+const experienceItems = translations[lang].experience.timeline;
+experienceTimeline.innerHTML = experienceItems.map(item => `
+  <div class="timeline-item">
+    <div class="circle-dot"></div>
+    <div class="institution-header">
+      <img src="${item.logo}" alt="${item.company}" class="institution-logo">
+      <div class="timeline-content">
+        <h3 class="timeline-date"><em class="fa fa-calendar"></em> ${item.date}</h3>
+        <h4 class="timeline-title">${item.title}</h4>
+        <p class="timeline-text">${item.location}</p>
+        <p class="timeline-description">${item.description}</p>
+        <div class="timeline-achievements">
+          ${item.achievements.map(achievement => `<span class="achievement-tag">${achievement}</span>`).join('')}
+        </div>
+      </div>
     </div>
-  `).join('');
+  </div>
+`).join('');
 }
 
   
