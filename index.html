@@ -1190,7 +1190,192 @@
 
 
 
+<!-- Add this entire section between portfolio and contact sections -->
+<!-- ==== Blog Section Start ==== -->
+<section class="blog section" id="blog">
+  <div class="container">
+    <div class="row">
+      <div class="section-title padd-15">
+        <h2>Blog & Insights</h2>
+        <p class="section-subtitle">Sharing my journey in data engineering, AI, and software development</p>
+      </div>
+    </div>
+    
+    <!-- Blog Filter & Search -->
+    <div class="row">
+      <div class="blog-controls padd-15">
+        <div class="blog-filters">
+          <button type="button" class="blog-filter-btn active" data-filter="all">All Posts</button>
+          <button type="button" class="blog-filter-btn" data-filter="projects">Project Deep Dives</button>
+          <button type="button" class="blog-filter-btn" data-filter="tutorials">Tutorials</button>
+          <button type="button" class="blog-filter-btn" data-filter="insights">Industry Insights</button>
+          <button type="button" class="blog-filter-btn" data-filter="journey">Learning Journey</button>
+        </div>
+        <div class="blog-search">
+          <input type="text" class="blog-search-input" placeholder="Search articles...">
+          <em class="fa fa-search"></em>
+        </div>
+      </div>
+    </div>
 
+    <!-- Blog Grid -->
+    <div class="row blog-grid">
+      
+      <!-- Article 1: DiabeteCare Project -->
+      <div class="blog-item padd-15" data-category="projects">
+        <div class="blog-item-inner">
+          <div class="blog-img">
+            <img src="./images/blog/diabetecare-blog.jpg" alt="DiabeteCare AI Project">
+            <div class="blog-date">
+              <span class="day">15</span>
+              <span class="month">Oct</span>
+            </div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category projects">Project Deep Dive</span>
+              <span class="reading-time">
+                <em class="fa fa-clock"></em> 8 min read
+              </span>
+            </div>
+            <h3 class="blog-title">
+              <a href="#" onclick="openBlogModal('diabetecare')">Building DiabeteCare: How I Achieved 94% Accuracy in Medical AI</a>
+            </h3>
+            <p class="blog-excerpt">
+              Deep dive into developing an AI-powered diabetic retinopathy screening system. Learn about the technical challenges, CNN architecture decisions, and how we processed 10,000+ medical images to achieve clinical-grade accuracy.
+            </p>
+            <div class="blog-tags">
+              <span class="tag">TensorFlow</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">Medical AI</span>
+              <span class="tag">Deep Learning</span>
+            </div>
+            <div class="blog-footer">
+              <a href="#" class="read-more" onclick="openBlogModal('diabetecare')">Read Full Article</a>
+              <div class="blog-share">
+                <em class="fa fa-share-alt"></em>
+                <div class="share-options">
+                  <a href="#" class="share-linkedin"><em class="fab fa-linkedin"></em></a>
+                  <a href="#" class="share-twitter"><em class="fab fa-twitter"></em></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Article 2: IAMAI Experience -->
+      <div class="blog-item padd-15" data-category="projects journey">
+        <div class="blog-item-inner">
+          <div class="blog-img">
+            <img src="./images/blog/iamai-experience.jpg" alt="IAMAI Dubai Experience">
+            <div class="blog-date">
+              <span class="day">28</span>
+              <span class="month">Sep</span>
+            </div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category journey">Learning Journey</span>
+              <span class="reading-time">
+                <em class="fa fa-clock"></em> 6 min read
+              </span>
+            </div>
+            <h3 class="blog-title">
+              <a href="#" onclick="openBlogModal('iamai-experience')">Enterprise AI at IAMAI Dubai: Lessons from Building Production Systems</a>
+            </h3>
+            <p class="blog-excerpt">
+              My experience building an AI platform that processes 10,000+ daily workflows. From integrating 25+ enterprise tools to achieving 99.2% reliability - here's what I learned about scaling AI systems in production.
+            </p>
+            <div class="blog-tags">
+              <span class="tag">Enterprise AI</span>
+              <span class="tag">Python</span>
+              <span class="tag">LangChain</span>
+              <span class="tag">Dubai</span>
+            </div>
+            <div class="blog-footer">
+              <a href="#" class="read-more" onclick="openBlogModal('iamai-experience')">Read Full Article</a>
+              <div class="blog-share">
+                <em class="fa fa-share-alt"></em>
+                <div class="share-options">
+                  <a href="#" class="share-linkedin"><em class="fab fa-linkedin"></em></a>
+                  <a href="#" class="share-twitter"><em class="fab fa-twitter"></em></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Article 3: Data Engineering Tutorial -->
+      <div class="blog-item padd-15" data-category="tutorials">
+        <div class="blog-item-inner">
+          <div class="blog-img">
+            <img src="./images/blog/kafka-tutorial.jpg" alt="Kafka Data Pipeline Tutorial">
+            <div class="blog-date">
+              <span class="day">12</span>
+              <span class="month">Sep</span>
+            </div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category tutorials">Tutorial</span>
+              <span class="reading-time">
+                <em class="fa fa-clock"></em> 12 min read
+              </span>
+            </div>
+            <h3 class="blog-title">
+              <a href="#" onclick="openBlogModal('kafka-tutorial')">Building Your First Real-Time Data Pipeline with Kafka and Python</a>
+            </h3>
+            <p class="blog-excerpt">
+              Step-by-step guide to building a production-ready data pipeline using Apache Kafka. From setup to deployment, learn the architecture patterns that power real-time data processing at scale.
+            </p>
+            <div class="blog-tags">
+              <span class="tag">Apache Kafka</span>
+              <span class="tag">Python</span>
+              <span class="tag">Data Engineering</span>
+              <span class="tag">Real-time</span>
+            </div>
+            <div class="blog-footer">
+              <a href="#" class="read-more" onclick="openBlogModal('kafka-tutorial')">Read Full Article</a>
+              <div class="blog-share">
+                <em class="fa fa-share-alt"></em>
+                <div class="share-options">
+                  <a href="#" class="share-linkedin"><em class="fab fa-linkedin"></em></a>
+                  <a href="#" class="share-twitter"><em class="fab fa-twitter"></em></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more articles here following the same pattern -->
+
+    </div>
+
+    <!-- Load More Button -->
+    <div class="row">
+      <div class="blog-load-more padd-15">
+        <button class="btn load-more-btn">Load More Articles</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- ==== Blog Section End ==== -->
+
+<!-- Blog Modal -->
+<div id="blogModal" class="blog-modal">
+  <div class="blog-modal-content">
+    <div class="blog-modal-header">
+      <span class="blog-modal-close">&times;</span>
+    </div>
+    <div id="blogModalBody" class="blog-modal-body">
+      <!-- Dynamic content will be loaded here -->
+    </div>
+  </div>
+</div>
 
 
 
