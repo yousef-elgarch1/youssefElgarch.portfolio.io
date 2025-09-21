@@ -181,9 +181,16 @@ const translations = {
   ]
     },
     "portfolio": {
-      "title": "Portfolio",
-      "recentProjects": "My Recent Projects:"
-    },
+  "title": "Portfolio",
+  "recentProjects": "Featured Projects",
+  "filters": {
+    "all": "All Projects",
+    "ai-ml": "AI/ML",
+    "data-engineering": "Data Engineering", 
+    "full-stack": "Full-Stack",
+    "enterprise": "Enterprise"
+  }
+},
     "contact": {
       "title": "Contact",
       "content": "Any questions? I am at your disposal"
@@ -721,7 +728,131 @@ experienceTimeline.innerHTML = experienceItems.map(item => `
 `).join('');
 }
 
+
+
+
+/* ========================= Portfolio Filter ========================= */
+const filterItems = document.querySelectorAll('.filter-item');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+filterItems.forEach(item => {
+  item.addEventListener('click', function() {
+    // Remove active class from all filter items
+    filterItems.forEach(filter => filter.classList.remove('active'));
+    // Add active class to clicked item
+    this.classList.add('active');
+    
+    const filterValue = this.getAttribute('data-filter');
+    
+    portfolioItems.forEach(portfolioItem => {
+      if(filterValue === 'all' || portfolioItem.getAttribute('data-category') === filterValue) {
+        portfolioItem.classList.remove('hide');
+      } else {
+        portfolioItem.classList.add('hide');
+      }
+    });
+  });
+});
+
+/* ========================= Project Modal ========================= */
+const modal = document.getElementById('projectModal');
+const modalBody = document.getElementById('modalBody');
+const closeModal = document.querySelector('.close');
+
+function openProjectModal(projectId) {
+  const projectData = getProjectData(projectId);
+  modalBody.innerHTML = generateModalContent(projectData);
+  modal.style.display = 'block';
+}
+
+closeModal.addEventListener('click', function() {
+  modal.style.display = 'none';
+});
+
+window.addEventListener('click', function(event) {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+function getProjectData(projectId) {
+  const projects = {
+    'diabetecare': {
+      title: 'DiabeteCare - AI Medical Diagnosis',
+      problem: 'Early detection of diabetic retinopathy is crucial but requires specialized expertise',
+      solution: 'AI-powered screening system with automated image analysis',
+      features: [
+        'Deep learning CNN architecture',
+        'Automated image preprocessing pipeline', 
+        '94% diagnostic accuracy achieved',
+        'Real-time medical image analysis'
+      ],
+      technologies: ['TensorFlow', 'OpenCV', 'Python', 'Medical AI'],
+      impact: '94% accuracy, 10,000+ medical images processed',
+      github: 'https://github.com/yousef-elgarch1/diabetecare'
+    },
+    'market-intelligence': {
+      title: 'Real-Time Crypto Market Intelligence',
+      problem: 'Traders need real-time market sentiment analysis for better decisions',
+      solution: 'Production-grade data pipeline with sentiment analysis and predictions',
+      features: [
+        'Apache Kafka data streaming',
+        'Apache Airflow ETL orchestration',
+        'Real-time sentiment analysis',
+        'MLflow model deployment'
+      ],
+      technologies: ['Kafka', 'Airflow', 'Python', 'Docker', 'PostgreSQL'],
+      impact: '10,000+ daily data points, Real-time processing',
+      github: 'https://github.com/yousef-elgarch1/crypto-intelligence'
+    }
+    // Add more projects...
+  };
   
+  return projects[projectId];
+}
+
+function generateModalContent(project) {
+  return `
+    <h2>${project.title}</h2>
+    
+    <div class="modal-section">
+      <h3>Problem</h3>
+      <p>${project.problem}</p>
+    </div>
+    
+    <div class="modal-section">
+      <h3>Solution</h3>
+      <p>${project.solution}</p>
+    </div>
+    
+    <div class="modal-section">
+      <h3>Key Features</h3>
+      <ul>
+        ${project.features.map(feature => `<li>${feature}</li>`).join('')}
+      </ul>
+    </div>
+    
+    <div class="modal-section">
+      <h3>Technologies</h3>
+      <div class="tech-stack">
+        ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+      </div>
+    </div>
+    
+    <div class="modal-section">
+      <h3>Impact & Results</h3>
+      <p>${project.impact}</p>
+    </div>
+    
+    ${project.github ? `
+    <div class="modal-actions">
+      <a href="${project.github}" class="btn" target="_blank">View on GitHub</a>
+    </div>
+    ` : ''}
+  `;
+}
+
+
 
 // Listen for language change
 document.getElementById('language-selector').addEventListener('change', function(event) {
