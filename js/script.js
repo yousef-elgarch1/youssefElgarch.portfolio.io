@@ -203,14 +203,14 @@ const translations = {
       "title": "Engineering Degree in Software Engineering",
       "location": "ENSIAS, Rabat, Morocco",
       "institution": "ENSIAS",
-      "logo": "../images/ensias.jfif"
+      "logo": "images/ensias.jfif"
     },
     {
       "date": "Sept. 2021 - June 2023",
       "title": "Preparatory Classes (Mathematics and Physics)",
       "location": "CPGE, Moulay Youssef, Rabat, Morocco",
       "institution": "CPGE",
-      "logo": "../images/mly.jfif"
+      "logo": "images/mly.jfif"
     }
   ]
 },
@@ -222,14 +222,14 @@ const translations = {
       "title": "AI Engineer Intern",
       "location": "IAMAI, Dubai, UAE",
       "company": "IAMAI",
-      "logo": "../images/logos/iamai.webp",
+      "logo": "images/logos/iamai.webp",
     },
     {
       "date": "July 2024 - Aug. 2024", 
       "title": "Full-Stack Developer Intern",
       "location": "REDAL, Rabat, Morocco",
       "company": "REDAL",
-      "logo": "../images/logos/redal.webp",
+      "logo": "images/logos/redal.webp",
     }
   ]
 },
