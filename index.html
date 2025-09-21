@@ -666,51 +666,195 @@
 <!-- ==== Services Section End ==== -->
 
       <!-- ==== Services Section End ==== -->
-      <!-- ==== Portfolio Section Start ==== -->
-      <section class="portfolio section" id="portfolio">
-        <div class="container">
-          <div class="row">
-            <div class="section-title padd-15">
-              <h2>Portfolio</h2>
-            </div>
-          </div>
-          <div class="row">
-            <div class="portfolio-heading padd-15">
-              <h2>My Recent Projects:</h2>
-            </div>
-          </div>
-          <div class="row">
-            <!-- ==== Portfolio item Start ==== -->
-            <div class="portfolio-item padd-15">
-              <div class="portfolio-item-inner shadow-dark">
-                <div class="portfolio-img">
-                  <a href="https://emersoncarneirodasilva.github.io/" target="_blank"><img
-                      src="./images/portfolio/redal.png" alt="redal" /></a>
+
+
+
+
+<!-- ==== Portfolio Section Start ==== -->
+<section class="portfolio section" id="portfolio">
+  <div class="container">
+    <div class="row">
+      <div class="section-title padd-15">
+        <h2>Portfolio</h2>
+      </div>
+    </div>
+    
+    <!-- Filter Buttons -->
+    <div class="row">
+      <div class="portfolio-filter padd-15">
+        <button type="button" class="filter-item active" data-filter="all">All Projects</button>
+        <button type="button" class="filter-item" data-filter="ai-ml">AI/ML</button>
+        <button type="button" class="filter-item" data-filter="data-engineering">Data Engineering</button>
+        <button type="button" class="filter-item" data-filter="full-stack">Full-Stack</button>
+        <button type="button" class="filter-item" data-filter="enterprise">Enterprise</button>
+      </div>
+    </div>
+    
+    <!-- Projects Grid -->
+    <div class="row portfolio-grid">
+      
+      <!-- Project 1: DiabeteCare -->
+      <div class="portfolio-item padd-15" data-category="ai-ml">
+        <div class="portfolio-item-inner shadow-dark">
+          <div class="portfolio-img">
+            <img src="./images/projects/diabetecare.jpg" alt="DiabeteCare AI">
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <h4>DiabeteCare</h4>
+                <p>Medical AI • 94% Accuracy</p>
+                <div class="tech-stack">
+                  <span class="tech-tag">TensorFlow</span>
+                  <span class="tech-tag">Computer Vision</span>
+                  <span class="tech-tag">Python</span>
                 </div>
               </div>
-            </div>
-            <div class="portfolio-item padd-15">
-              <div class="portfolio-item-inner shadow-dark">
-                <div class="portfolio-img">
-                  <a href="https://emersoncarneirodasilva.github.io/" target="_blank"><img
-                      src="./images/portfolio/internlink.jfif" alt="internlink" /></a>
-                </div>
+              <div class="portfolio-actions">
+                <button class="btn-small" onclick="openProjectModal('diabetecare')">View Details</button>
+                <a href="https://github.com/yousef-elgarch1/diabetecare" class="btn-small" target="_blank">GitHub</a>
               </div>
             </div>
-            <div class="portfolio-item padd-15">
-              <div class="portfolio-item-inner shadow-dark">
-                <div class="portfolio-img">
-                  <a href="https://emersoncarneirodasilva.github.io/" target="_blank"><img
-                      src="./images/portfolio/starbucks.png" alt="starbucks" /></a>
-                </div>
-              </div>
-            </div>
-     
-            <!-- ==== Portfolio item End ==== -->
           </div>
         </div>
-      </section>
-      <!-- ==== Portfolio Section End ==== -->
+      </div>
+      
+      <!-- Project 2: Market Intelligence -->
+      <div class="portfolio-item padd-15" data-category="data-engineering">
+        <div class="portfolio-item-inner shadow-dark">
+          <div class="portfolio-img">
+            <img src="./images/projects/market-intelligence.jpg" alt="Market Intelligence">
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <h4>Crypto Market Intelligence</h4>
+                <p>Real-time Data Pipeline</p>
+                <div class="tech-stack">
+                  <span class="tech-tag">Kafka</span>
+                  <span class="tech-tag">Airflow</span>
+                  <span class="tech-tag">Docker</span>
+                </div>
+              </div>
+              <div class="portfolio-actions">
+                <button class="btn-small" onclick="openProjectModal('market-intelligence')">View Details</button>
+                <a href="https://github.com/yousef-elgarch1/crypto-intelligence" class="btn-small" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Project 3: IAMAI Platform -->
+      <div class="portfolio-item padd-15" data-category="enterprise">
+        <div class="portfolio-item-inner shadow-dark">
+          <div class="portfolio-img">
+            <img src="./images/projects/iamai-platform.jpg" alt="IAMAI Platform">
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <h4>IAMAI AI Platform</h4>
+                <p>Enterprise • 10K+ Workflows</p>
+                <div class="tech-stack">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">LangChain</span>
+                  <span class="tech-tag">MongoDB</span>
+                </div>
+              </div>
+              <div class="portfolio-actions">
+                <button class="btn-small" onclick="openProjectModal('iamai-platform')">View Details</button>
+                <span class="btn-small disabled">Enterprise Project</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Project 4: HearMeOut -->
+      <div class="portfolio-item padd-15" data-category="ai-ml">
+        <div class="portfolio-item-inner shadow-dark">
+          <div class="portfolio-img">
+            <img src="./images/projects/hearmeout.jpg" alt="HearMeOut ASL">
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <h4>HearMeOut</h4>
+                <p>ASL Translation • Mobile App</p>
+                <div class="tech-stack">
+                  <span class="tech-tag">React Native</span>
+                  <span class="tech-tag">YOLOv8</span>
+                  <span class="tech-tag">Firebase</span>
+                </div>
+              </div>
+              <div class="portfolio-actions">
+                <button class="btn-small" onclick="openProjectModal('hearmeout')">View Details</button>
+                <a href="https://github.com/yousef-elgarch1/hearmeout" class="btn-small" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Project 5: REDAL App -->
+      <div class="portfolio-item padd-15" data-category="full-stack">
+        <div class="portfolio-item-inner shadow-dark">
+          <div class="portfolio-img">
+            <img src="./images/projects/redal-app.jpg" alt="REDAL Application">
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <h4>REDAL Enterprise App</h4>
+                <p>Full-Stack • 200+ Users</p>
+                <div class="tech-stack">
+                  <span class="tech-tag">React.js</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                </div>
+              </div>
+              <div class="portfolio-actions">
+                <button class="btn-small" onclick="openProjectModal('redal-app')">View Details</button>
+                <span class="btn-small disabled">Enterprise Project</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Project 6: Space Debris Tracker -->
+      <div class="portfolio-item padd-15" data-category="full-stack">
+        <div class="portfolio-item-inner shadow-dark">
+          <div class="portfolio-img">
+            <img src="./images/projects/space-tracker.jpg" alt="Space Debris Tracker">
+            <div class="portfolio-overlay">
+              <div class="portfolio-info">
+                <h4>Space Debris Tracker</h4>
+                <p>3D Visualization • NASA API</p>
+                <div class="tech-stack">
+                  <span class="tech-tag">Java</span>
+                  <span class="tech-tag">Three.js</span>
+                  <span class="tech-tag">NASA API</span>
+                </div>
+              </div>
+              <div class="portfolio-actions">
+                <button class="btn-small" onclick="openProjectModal('space-tracker')">View Details</button>
+                <a href="https://github.com/yousef-elgarch1/space-tracker" class="btn-small" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<!-- ==== Portfolio Section End ==== -->
+
+<!-- Project Modal -->
+<div id="projectModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div id="modalBody">
+      <!-- Dynamic content will be loaded here -->
+    </div>
+  </div>
+</div>
+
+
+
+            
       <!-- ==== Contact Section Start ==== -->
       <section class="contact section" id="contact">
         <div class="container">
