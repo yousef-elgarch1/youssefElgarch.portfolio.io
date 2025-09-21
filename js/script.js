@@ -852,7 +852,54 @@ function generateModalContent(project) {
   `;
 }
 
+/* ========================= EmailJS Contact Form ========================= */
+// Initialize EmailJS
+(function() {
+  emailjs.init("X36T6z7gIE9XnBL9b"); // You'll get this from EmailJS
+})();
 
+// Contact form handling
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const submitBtn = document.getElementById('submit-btn');
+  const formStatus = document.getElementById('form-status');
+  
+  // Show loading state
+  submitBtn.classList.add('loading');
+  submitBtn.disabled = true;
+  showFormStatus('loading', 'Sending message...');
+  
+  // Send email using EmailJS
+  emailjs.sendForm('service_dmqf97f', 'template_jdolhun', this)
+    .then(function(response) {
+      console.log('SUCCESS!', response.status, response.text);
+      showFormStatus('success', 'Message sent successfully! I\'ll get back to you soon.');
+      document.getElementById('contact-form').reset();
+    }, function(error) {
+      console.log('FAILED...', error);
+      showFormStatus('error', 'Failed to send message. Please try again or contact me directly.');
+    })
+    .finally(function() {
+      // Remove loading state
+      submitBtn.classList.remove('loading');
+      submitBtn.disabled = false;
+    });
+});
+
+function showFormStatus(type, message) {
+  const formStatus = document.getElementById('form-status');
+  formStatus.className = `form-status ${type}`;
+  formStatus.textContent = message;
+  formStatus.style.display = 'block';
+  
+  // Auto hide after 5 seconds for success/error
+  if (type !== 'loading') {
+    setTimeout(() => {
+      formStatus.style.display = 'none';
+    }, 5000);
+  }
+}
 
 // Listen for language change
 document.getElementById('language-selector').addEventListener('change', function(event) {
