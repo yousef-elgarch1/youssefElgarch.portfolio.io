@@ -153,7 +153,7 @@ const translations = {
       "city": "Rabat, Morocco",
       "freelance": "Available",
       "hireMe": "View My Projects",
-      "viewCV": "Download My Resume"
+      "viewCV": "View My Projects"
     },
     "about": {
       "title": "About",
