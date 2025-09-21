@@ -215,28 +215,14 @@ const translations = {
       "title": "AI Engineer Intern",
       "location": "IAMAI, Dubai, UAE",
       "company": "IAMAI",
-      "logo": "./images/logos/iamai-logo.png",
-      "description": "Led development of enterprise AI platform integrating 25+ tools with scalable architecture processing thousands of daily workflows.",
-      "achievements": [
-        "10,000+ daily workflows",
-        "99.2% system reliability", 
-        "JWT authentication",
-        "Real-time notifications"
-      ]
+      "logo": "./images/logos/iamai-logo.png"
     },
     {
       "date": "July 2024 - Aug. 2024", 
       "title": "Full-Stack Developer Intern",
       "location": "REDAL, Rabat, Morocco",
       "company": "REDAL",
-      "logo": "./images/logos/redal-logo.png",
-      "description": "Architected full-stack enterprise application serving 200+ users with DocuSign API integration and automated workflows.",
-      "achievements": [
-        "200+ active users",
-        "DocuSign integration",
-        "Docker deployment",
-        "PostgreSQL database"
-      ]
+      "logo": "./images/logos/redal-logo.png"
     }
   ]
 },
