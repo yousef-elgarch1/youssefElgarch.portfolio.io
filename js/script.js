@@ -196,14 +196,14 @@ const translations = {
       "title": "Engineering Degree in Software Engineering",
       "location": "ENSIAS, Rabat, Morocco",
       "institution": "ENSIAS",
-      "logo": "./images/ensias.jfif"
+      "logo": "../images/ensias.jfif"
     },
     {
       "date": "Sept. 2021 - June 2023",
       "title": "Preparatory Classes (Mathematics and Physics)",
       "location": "CPGE, Moulay Youssef, Rabat, Morocco",
       "institution": "CPGE",
-      "logo": "./images/mly.jfif"
+      "logo": "../images/mly.jfif"
     }
   ]
 },
