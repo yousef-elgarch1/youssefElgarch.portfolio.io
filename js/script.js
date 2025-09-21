@@ -852,28 +852,17 @@ function generateModalContent(project) {
   `;
 }
 
-
-
-/* ========================= Technologies Filter (Enhanced) ========================= */
+/* ========================= Enhanced Technologies Filter ========================= */
 document.addEventListener('DOMContentLoaded', function() {
-  // Wait for DOM to be fully loaded
   const techFilterBtns = document.querySelectorAll('.tech-filter-btn');
   const techCards = document.querySelectorAll('.tech-card');
   
-  console.log('Filter buttons found:', techFilterBtns.length);
-  console.log('Tech cards found:', techCards.length);
+  console.log('Enhanced filter initialized with', techFilterBtns.length, 'buttons and', techCards.length, 'cards');
   
-  // Check if elements exist
-  if (techFilterBtns.length === 0 || techCards.length === 0) {
-    console.error('Filter elements not found');
-    return;
-  }
-  
-  techFilterBtns.forEach((btn, index) => {
-    console.log('Adding listener to button:', index, btn.textContent);
-    
+  // Add click event to each filter button
+  techFilterBtns.forEach(btn => {
     btn.addEventListener('click', function() {
-      console.log('Filter button clicked:', this.getAttribute('data-filter'));
+      console.log('Filter clicked:', this.getAttribute('data-filter'));
       
       // Remove active class from all buttons
       techFilterBtns.forEach(button => button.classList.remove('active'));
@@ -882,24 +871,192 @@ document.addEventListener('DOMContentLoaded', function() {
       this.classList.add('active');
       
       const filterValue = this.getAttribute('data-filter');
-      console.log('Filtering by:', filterValue);
+      let visibleCount = 0;
       
-      // Filter tech cards
-      techCards.forEach((card, cardIndex) => {
-        const cardCategories = card.getAttribute('data-category');
-        console.log('Card', cardIndex, 'categories:', cardCategories);
+      // Filter tech cards with animation
+      techCards.forEach((card, index) => {
+        const cardCategories = card.getAttribute('data-category') || '';
         
-        if(filterValue === 'all') {
+        setTimeout(() => {
+          if (filterValue === 'all' || cardCategories.includes(filterValue)) {
+            card.classList.remove('hide');
+            visibleCount++;
+          } else {
+            card.classList.add('hide');
+          }
+        }, index * 50); // Staggered animation
+      });
+      
+      // Update filter button text with count
+      setTimeout(() => {
+        if (filterValue !== 'all') {
+          this.textContent = this.textContent.split(' (')[0] + ` (${visibleCount})`;
+        }
+      }, techCards.length * 50 + 100);
+    });
+  });
+  
+  // Add search functionality
+  addTechSearch();
+  
+  // Add skill level stats
+  updateSkillStats();
+});
+
+/* ========================= Technology Search ========================= */
+function addTechSearch() {
+  // Create search input if it doesn't exist
+  const filterContainer = document.querySelector('.tech-filter');
+  if (!document.querySelector('.tech-search')) {
+    const searchInput = document.createElement('input');
+    searchInput.type = 'text';
+    searchInput.className = 'tech-search';
+    searchInput.placeholder = 'Search technologies...';
+    searchInput.style.cssText = `
+      margin: 10px;
+      padding: 8px 15px;
+      border: 1px solid var(--bg-black-50);
+      border-radius: 20px;
+      outline: none;
+      font-size: 14px;
+      width: 200px;
+    `;
+    
+    filterContainer.appendChild(searchInput);
+    
+    // Add search functionality
+    searchInput.addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase();
+      const techCards = document.querySelectorAll('.tech-card');
+      
+      techCards.forEach(card => {
+        const techName = card.querySelector('h4').textContent.toLowerCase();
+        const techCategory = card.querySelector('.tech-category').textContent.toLowerCase();
+        const techDescription = card.querySelector('.tech-description').textContent.toLowerCase();
+        
+        const matches = techName.includes(searchTerm) || 
+                       techCategory.includes(searchTerm) || 
+                       techDescription.includes(searchTerm);
+        
+        if (matches || searchTerm === '') {
           card.classList.remove('hide');
-          console.log('Showing card', cardIndex, '(show all)');
-        } else if(cardCategories && cardCategories.includes(filterValue)) {
-          card.classList.remove('hide');
-          console.log('Showing card', cardIndex, '(matches filter)');
         } else {
           card.classList.add('hide');
-          console.log('Hiding card', cardIndex, '(no match)');
         }
       });
+      
+      // Reset active filter when searching
+      if (searchTerm !== '') {
+        document.querySelectorAll('.tech-filter-btn').forEach(btn => {
+          btn.classList.remove('active');
+        });
+      }
+    });
+  }
+}
+
+/* ========================= Skill Level Statistics ========================= */
+function updateSkillStats() {
+  const techCards = document.querySelectorAll('.tech-card');
+  const skillCounts = {
+    expert: 0,
+    advanced: 0,
+    intermediate: 0,
+    learning: 0
+  };
+  
+  techCards.forEach(card => {
+    const skillLevel = card.querySelector('.tech-level');
+    if (skillLevel) {
+      const level = skillLevel.textContent.toLowerCase();
+      if (skillCounts.hasOwnProperty(level)) {
+        skillCounts[level]++;
+      }
+    }
+  });
+  
+  // Add stats to the section title
+  const sectionTitle = document.querySelector('.techno .section-title h2');
+  if (sectionTitle && !sectionTitle.querySelector('.skill-stats')) {
+    const statsHTML = `
+      <div class="skill-stats" style="font-size: 14px; color: var(--text-black-700); margin-top: 10px; font-weight: 400;">
+        <span style="margin: 0 15px;">
+          <span style="color: #28a745; font-weight: 600;">${skillCounts.expert}</span> Expert
+        </span>
+        <span style="margin: 0 15px;">
+          <span style="color: var(--skin-color); font-weight: 600;">${skillCounts.advanced}</span> Advanced
+        </span>
+        <span style="margin: 0 15px;">
+          <span style="color: #ffc107; font-weight: 600;">${skillCounts.intermediate}</span> Intermediate
+        </span>
+        ${skillCounts.learning > 0 ? `
+        <span style="margin: 0 15px;">
+          <span style="color: #6c757d; font-weight: 600;">${skillCounts.learning}</span> Learning
+        </span>
+        ` : ''}
+      </div>
+    `;
+    sectionTitle.insertAdjacentHTML('afterend', statsHTML);
+  }
+}
+
+/* ========================= Progress Bar Animation on Scroll ========================= */
+const observerOptions = {
+  threshold: 0.3,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const progressObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const progressBars = entry.target.querySelectorAll('.progress-bar');
+      progressBars.forEach((bar, index) => {
+        const finalWidth = bar.style.width;
+        bar.style.width = '0%';
+        
+        setTimeout(() => {
+          bar.style.transition = 'width 1.5s ease-out';
+          bar.style.width = finalWidth;
+        }, index * 100);
+      });
+    }
+  });
+}, observerOptions);
+
+// Observe all tech cards for animation
+document.querySelectorAll('.tech-card').forEach(card => {
+  progressObserver.observe(card);
+});
+
+/* ========================= Technology Card Interactions ========================= */
+document.addEventListener('DOMContentLoaded', function() {
+  const techCards = document.querySelectorAll('.tech-card');
+  
+  techCards.forEach(card => {
+    // Add click to expand functionality
+    card.addEventListener('click', function() {
+      const description = this.querySelector('.tech-description');
+      const isExpanded = this.classList.contains('expanded');
+      
+      if (isExpanded) {
+        description.style.maxHeight = '3em';
+        this.classList.remove('expanded');
+      } else {
+        description.style.maxHeight = 'none';
+        this.classList.add('expanded');
+      }
+    });
+    
+    // Add hover sound effect (optional)
+    card.addEventListener('mouseenter', function() {
+      // You can add subtle sound effects here if desired
+      this.style.transform = 'translateY(-8px) scale(1.02)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      if (!this.classList.contains('expanded')) {
+        this.style.transform = 'translateY(0) scale(1)';
+      }
     });
   });
 });
