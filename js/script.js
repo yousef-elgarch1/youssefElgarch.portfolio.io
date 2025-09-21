@@ -1,20 +1,17 @@
-/* ========================= Enhanced Typing Animation ========================= */
+/* ========================= Typing Animation ========================= */
 let typed = new Typed(".typing", {
   strings: [
-    "scalable data infrastructure that powers intelligent systems",
-    "real-time data pipelines with 99.2% reliability", 
-    "AI applications with 94% diagnostic accuracy",
-    "enterprise platforms processing 10,000+ daily workflows",
-    "end-to-end solutions from data ingestion to insights"
+    "",
+    "Front-End Programmer",
+    "Web Developer",
+    "AI Engineer",
+    "Machine Learning Engineer",
+    "Front-End Programmer",
   ],
-  typeSpeed: 50,
-  backSpeed: 30,
+  typeSpeed: 100,
+  BackSpeed: 60,
   loop: true,
-  backDelay: 2000,
-  startDelay: 500
 });
-
-
 
  
 
