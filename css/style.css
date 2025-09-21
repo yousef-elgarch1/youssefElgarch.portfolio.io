@@ -6,6 +6,7 @@
   --bg-black-50: #e8dfec;
   --text-black-900: #302e4d;
   --text-black-700: #504e70;
+  --skin-color-rgb: 236, 24, 57; /* Add this for rgba usage */
 }
 
 body {
