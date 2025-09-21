@@ -1119,3 +1119,284 @@ document.getElementById('language-selector').addEventListener('change', function
 
 // Set default language to English
 changeLanguage('en');
+
+
+
+
+
+
+
+/* ========================= Blog Section Functionality ========================= */
+document.addEventListener('DOMContentLoaded', function() {
+  initBlogSection();
+});
+
+function initBlogSection() {
+  // Blog filter functionality
+  const blogFilterBtns = document.querySelectorAll('.blog-filter-btn');
+  const blogItems = document.querySelectorAll('.blog-item');
+  
+  blogFilterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Remove active from all buttons
+      blogFilterBtns.forEach(button => button.classList.remove('active'));
+      // Add active to clicked button
+      this.classList.add('active');
+      
+      const filterValue = this.getAttribute('data-filter');
+      
+      blogItems.forEach(item => {
+        const itemCategories = item.getAttribute('data-category');
+        if (filterValue === 'all' || itemCategories.includes(filterValue)) {
+          item.classList.remove('hide');
+        } else {
+          item.classList.add('hide');
+        }
+      });
+    });
+  });
+  
+  // Blog search functionality
+  const searchInput = document.querySelector('.blog-search-input');
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase();
+      
+      blogItems.forEach(item => {
+        const title = item.querySelector('.blog-title a').textContent.toLowerCase();
+        const excerpt = item.querySelector('.blog-excerpt').textContent.toLowerCase();
+        const tags = Array.from(item.querySelectorAll('.tag')).map(tag => tag.textContent.toLowerCase()).join(' ');
+        
+        const matches = title.includes(searchTerm) || 
+                       excerpt.includes(searchTerm) || 
+                       tags.includes(searchTerm);
+        
+        if (matches || searchTerm === '') {
+          item.classList.remove('hide');
+        } else {
+          item.classList.add('hide');
+        }
+      });
+    });
+  }
+  
+  // Load more functionality
+  const loadMoreBtn = document.querySelector('.load-more-btn');
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', function() {
+      // This would typically load more articles from a server
+      // For now, we'll just show a message
+      this.textContent = 'More articles coming soon!';
+      this.disabled = true;
+    });
+  }
+}
+
+/* ========================= Blog Modal Functionality ========================= */
+function openBlogModal(articleId) {
+  const modal = document.getElementById('blogModal');
+  const modalBody = document.getElementById('blogModalBody');
+  
+  // Get article content based on ID
+  const articleContent = getBlogArticleContent(articleId);
+  modalBody.innerHTML = articleContent;
+  
+  modal.style.display = 'block';
+  document.body.style.overflow = 'hidden'; // Prevent background scroll
+}
+
+// Close modal functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('blogModal');
+  const closeBtn = document.querySelector('.blog-modal-close');
+  
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function() {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    });
+  }
+  
+  // Close modal when clicking outside
+  window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  });
+});
+
+/* ========================= Blog Article Content ========================= */
+function getBlogArticleContent(articleId) {
+  const articles = {
+    'diabetecare': `
+      <h1>Building DiabeteCare: How I Achieved 94% Accuracy in Medical AI</h1>
+      
+      <div class="article-meta">
+        <span class="article-date">October 15, 2024</span>
+        <span class="article-category">Project Deep Dive</span>
+        <span class="reading-time">8 min read</span>
+      </div>
+      
+      <h2>The Challenge</h2>
+      <p>Diabetic retinopathy is one of the leading causes of blindness worldwide, affecting millions of people with diabetes. Early detection is crucial for preventing vision loss, but requires specialized ophthalmological expertise that isn't always available, especially in rural areas.</p>
+      
+      <p>This is where AI can make a real difference. My goal was to build a system that could analyze retinal images and detect signs of diabetic retinopathy with clinical-grade accuracy.</p>
+      
+      <h2>Technical Approach</h2>
+      <p>I designed a convolutional neural network (CNN) architecture specifically optimized for medical image analysis. The key decisions were:</p>
+      
+      <ul>
+        <li><strong>Data Pipeline:</strong> Processed over 10,000 medical images with careful preprocessing</li>
+        <li><strong>Architecture:</strong> Custom CNN with attention mechanisms for feature extraction</li>
+        <li><strong>Training Strategy:</strong> Transfer learning with domain-specific fine-tuning</li>
+        <li><strong>Validation:</strong> Rigorous cross-validation with medical expert review</li>
+      </ul>
+      
+      <h2>Key Technical Challenges</h2>
+      <h3>1. Data Quality and Preprocessing</h3>
+      <p>Medical images require extremely careful preprocessing. I implemented:</p>
+      <pre><code>
+# Image preprocessing pipeline
+def preprocess_retinal_image(image_path):
+    image = cv2.imread(image_path)
+    # Normalize contrast and brightness
+    image = cv2.createCLAHE(clipLimit=2.0).apply(image)
+    # Resize to standard dimensions
+    image = cv2.resize(image, (512, 512))
+    # Normalize pixel values
+    image = image / 255.0
+    return image
+      </code></pre>
+      
+      <h3>2. Model Architecture</h3>
+      <p>The CNN architecture was designed with medical imaging in mind:</p>
+      <pre><code>
+# Simplified model architecture
+model = Sequential([
+    Conv2D(32, (3, 3), activation='relu', input_shape=(512, 512, 3)),
+    BatchNormalization(),
+    MaxPooling2D(2, 2),
+    # ... additional layers
+    GlobalAveragePooling2D(),
+    Dense(128, activation='relu'),
+    Dropout(0.5),
+    Dense(5, activation='softmax')  # 5 severity levels
+])
+      </code></pre>
+      
+      <h2>Results and Impact</h2>
+      <p>After extensive training and validation, the model achieved:</p>
+      <ul>
+        <li><strong>94% accuracy</strong> on the test dataset</li>
+        <li><strong>92% sensitivity</strong> for detecting severe cases</li>
+        <li><strong>96% specificity</strong> to avoid false positives</li>
+        <li><strong>Sub-second inference time</strong> for real-time screening</li>
+      </ul>
+      
+      <h2>Lessons Learned</h2>
+      <p>This project taught me the importance of:</p>
+      <ul>
+        <li>Domain expertise collaboration (working with medical professionals)</li>
+        <li>Ethical AI considerations in healthcare</li>
+        <li>Rigorous validation for safety-critical applications</li>
+        <li>The balance between model complexity and interpretability</li>
+      </ul>
+      
+      <h2>Future Improvements</h2>
+      <p>Next steps for this project include:</p>
+      <ul>
+        <li>Expanding to other retinal conditions</li>
+        <li>Implementing explainable AI features</li>
+        <li>Mobile app development for field deployment</li>
+        <li>Integration with electronic health records</li>
+      </ul>
+      
+      <p><em>This project represents my commitment to using AI for social good. Technology should serve humanity, and healthcare is one of the most impactful areas where we can make a difference.</em></p>
+    `,
+    
+    'iamai-experience': `
+      <h1>Enterprise AI at IAMAI Dubai: Lessons from Building Production Systems</h1>
+      
+      <div class="article-meta">
+        <span class="article-date">September 28, 2024</span>
+        <span class="article-category">Learning Journey</span>
+        <span class="reading-time">6 min read</span>
+      </div>
+      
+      <p>My internship at IAMAI in Dubai was a transformative experience that taught me what it really means to build AI systems at enterprise scale. Here's what I learned about architecting platforms that process thousands of workflows daily...</p>
+      
+      <h2>The Challenge: Enterprise AI Integration</h2>
+      <p>IAMAI needed a platform that could integrate 25+ different enterprise tools and automate complex workflows. The system had to be reliable, scalable, and intelligent enough to handle diverse business processes.</p>
+      
+      <h2>Technical Architecture</h2>
+      <p>We built a distributed system using:</p>
+      <ul>
+        <li><strong>Python backend</strong> with async processing</li>
+        <li><strong>LangChain</strong> for AI agent orchestration</li>
+        <li><strong>MongoDB</strong> with 15+ collections for data persistence</li>
+        <li><strong>JWT authentication</strong> for enterprise security</li>
+        <li><strong>Real-time notifications</strong> for workflow updates</li>
+      </ul>
+      
+      <h2>Achieving 99.2% Reliability</h2>
+      <p>The key to our reliability was:</p>
+      <ul>
+        <li>Comprehensive error handling and retry mechanisms</li>
+        <li>Circuit breaker patterns for external API calls</li>
+        <li>Distributed logging and monitoring</li>
+        <li>Graceful degradation for non-critical services</li>
+      </ul>
+      
+      <h2>Scaling to 10,000+ Daily Workflows</h2>
+      <p>Performance optimization included:</p>
+      <ul>
+        <li>Asynchronous processing with worker queues</li>
+        <li>Database indexing and query optimization</li>
+        <li>Caching strategies for frequently accessed data</li>
+        <li>Load balancing across multiple instances</li>
+      </ul>
+      
+      <h2>Key Takeaways</h2>
+      <p>This experience taught me that enterprise AI is fundamentally different from academic projects. It's not just about algorithms - it's about reliability, security, integration, and user experience at scale.</p>
+    `,
+    
+    // Add more articles here...
+  };
+  
+  return articles[articleId] || '<p>Article content coming soon...</p>';
+}
+/* ========================= Social Sharing ========================= */
+function shareOnLinkedIn(articleTitle, articleUrl) {
+  const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(articleUrl)}&title=${encodeURIComponent(articleTitle)}`;
+  window.open(url, '_blank', 'width=600,height=400');
+}
+
+function shareOnTwitter(articleTitle, articleUrl) {
+  const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(articleTitle)}&url=${encodeURIComponent(articleUrl)}`;
+  window.open(url, '_blank', 'width=600,height=400');
+}
+
+// Add social sharing to blog items
+document.addEventListener('DOMContentLoaded', function() {
+  const linkedinBtns = document.querySelectorAll('.share-linkedin');
+  const twitterBtns = document.querySelectorAll('.share-twitter');
+  
+  linkedinBtns.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const articleTitle = this.closest('.blog-item').querySelector('.blog-title a').textContent;
+      const articleUrl = window.location.href + '#blog';
+      shareOnLinkedIn(articleTitle, articleUrl);
+    });
+  });
+  
+  twitterBtns.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const articleTitle = this.closest('.blog-item').querySelector('.blog-title a').textContent;
+      const articleUrl = window.location.href + '#blog';
+      shareOnTwitter(articleTitle, articleUrl);
+    });
+  });
+});
