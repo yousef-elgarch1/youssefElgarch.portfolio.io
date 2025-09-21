@@ -550,6 +550,80 @@ h3.my-profession {
 
 
 /* About */
+
+
+/* Institution logos in timeline */
+.institution-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.institution-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 2px solid var(--bg-black-50);
+  padding: 5px;
+  background-color: var(--bg-black-100);
+}
+
+.timeline-content {
+  flex: 1;
+}
+
+/* Achievement badges */
+.achievement-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background-color: rgba(var(--skin-color-rgb), 0.1);
+  border-radius: 20px;
+  border: 1px solid var(--skin-color);
+}
+
+.achievement-badge em {
+  color: var(--skin-color);
+  font-size: 16px;
+}
+
+.achievement-badge p {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+/* Tech icons in skills */
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.tech-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Add hover effects */
+.institution-logo:hover,
+.tech-icon:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
 .about .about-content {
   flex: 0 0 100%;
   max-width: 100%;
