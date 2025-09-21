@@ -228,13 +228,11 @@
 
 
 
-
-
 <!-- ==== Technologies Section Start ==== -->
 <section class="techno section" id="techno">
   <div class="container">
     <div class="row">
-            <div class="section-title h2 padd-15">
+      <div class="section-title padd-15">
         <h2>Technologies & Skills</h2>
       </div>
     </div>
@@ -244,8 +242,11 @@
       <div class="tech-filter padd-15">
         <button type="button" class="tech-filter-btn active" data-filter="all">All Skills</button>
         <button type="button" class="tech-filter-btn" data-filter="core">Core Stack</button>
+        <button type="button" class="tech-filter-btn" data-filter="frontend">Frontend</button>
         <button type="button" class="tech-filter-btn" data-filter="cloud">Cloud & DevOps</button>
         <button type="button" class="tech-filter-btn" data-filter="ai">AI & Data</button>
+        <button type="button" class="tech-filter-btn" data-filter="mobile">Mobile Dev</button>
+        <button type="button" class="tech-filter-btn" data-filter="automation">Automation</button>
         <button type="button" class="tech-filter-btn" data-filter="expert">Expert Level</button>
       </div>
     </div>
@@ -279,7 +280,7 @@
       </div>
 
       <!-- JavaScript -->
-      <div class="tech-card padd-15" data-category="core expert">
+      <div class="tech-card padd-15" data-category="core frontend expert">
         <div class="tech-card-inner">
           <div class="tech-header">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="tech-logo">
@@ -304,7 +305,7 @@
       </div>
 
       <!-- React.js -->
-      <div class="tech-card padd-15" data-category="core expert">
+      <div class="tech-card padd-15" data-category="core frontend expert">
         <div class="tech-card-inner">
           <div class="tech-header">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="tech-logo">
@@ -312,7 +313,7 @@
               <h4>React.js</h4>
               <span class="tech-category">Frontend Framework</span>
             </div>
-            <div class="tech-level advanced">Advanced</div>
+            <div class="tech-level expert">Expert</div>
           </div>
           <div class="tech-details">
             <div class="tech-progress">
@@ -324,6 +325,56 @@
               <span class="stat-item">200+ Users</span>
             </div>
             <p class="tech-description">Enterprise applications, REDAL project, responsive web interfaces</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TypeScript -->
+      <div class="tech-card padd-15" data-category="core frontend">
+        <div class="tech-card-inner">
+          <div class="tech-header">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="tech-logo">
+            <div class="tech-info">
+              <h4>TypeScript</h4>
+              <span class="tech-category">Programming Language</span>
+            </div>
+            <div class="tech-level advanced">Advanced</div>
+          </div>
+          <div class="tech-details">
+            <div class="tech-progress">
+              <div class="progress-bar" style="width: 78%"></div>
+            </div>
+            <div class="tech-stats">
+              <span class="stat-item">6+ Projects</span>
+              <span class="stat-item">Type Safety</span>
+              <span class="stat-item">Modern JS</span>
+            </div>
+            <p class="tech-description">Type-safe JavaScript development, large-scale applications, better IDE support</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Node.js -->
+      <div class="tech-card padd-15" data-category="core expert">
+        <div class="tech-card-inner">
+          <div class="tech-header">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="tech-logo">
+            <div class="tech-info">
+              <h4>Node.js</h4>
+              <span class="tech-category">Backend Runtime</span>
+            </div>
+            <div class="tech-level expert">Expert</div>
+          </div>
+          <div class="tech-details">
+            <div class="tech-progress">
+              <div class="progress-bar" style="width: 85%"></div>
+            </div>
+            <div class="tech-stats">
+              <span class="stat-item">6+ Projects</span>
+              <span class="stat-item">APIs</span>
+              <span class="stat-item">Enterprise</span>
+            </div>
+            <p class="tech-description">RESTful APIs, enterprise backends, JWT authentication, real-time applications</p>
           </div>
         </div>
       </div>
@@ -378,6 +429,31 @@
         </div>
       </div>
 
+      <!-- Apache Airflow -->
+      <div class="tech-card padd-15" data-category="ai cloud expert">
+        <div class="tech-card-inner">
+          <div class="tech-header">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" alt="Airflow" class="tech-logo">
+            <div class="tech-info">
+              <h4>Apache Airflow</h4>
+              <span class="tech-category">ETL Orchestration</span>
+            </div>
+            <div class="tech-level expert">Expert</div>
+          </div>
+          <div class="tech-details">
+            <div class="tech-progress">
+              <div class="progress-bar" style="width: 80%"></div>
+            </div>
+            <div class="tech-stats">
+              <span class="stat-item">5+ Projects</span>
+              <span class="stat-item">ETL Pipelines</span>
+              <span class="stat-item">Production</span>
+            </div>
+            <p class="tech-description">ETL orchestration, data pipeline automation, workflow management</p>
+          </div>
+        </div>
+      </div>
+
       <!-- TensorFlow -->
       <div class="tech-card padd-15" data-category="ai expert">
         <div class="tech-card-inner">
@@ -403,31 +479,6 @@
         </div>
       </div>
 
-      <!-- Node.js -->
-      <div class="tech-card padd-15" data-category="core expert">
-        <div class="tech-card-inner">
-          <div class="tech-header">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="tech-logo">
-            <div class="tech-info">
-              <h4>Node.js</h4>
-              <span class="tech-category">Backend Runtime</span>
-            </div>
-            <div class="tech-level advanced">Advanced</div>
-          </div>
-          <div class="tech-details">
-            <div class="tech-progress">
-              <div class="progress-bar" style="width: 85%"></div>
-            </div>
-            <div class="tech-stats">
-              <span class="stat-item">6+ Projects</span>
-              <span class="stat-item">APIs</span>
-              <span class="stat-item">Enterprise</span>
-            </div>
-            <p class="tech-description">RESTful APIs, enterprise backends, JWT authentication, real-time applications</p>
-          </div>
-        </div>
-      </div>
-
       <!-- PostgreSQL -->
       <div class="tech-card padd-15" data-category="core cloud expert">
         <div class="tech-card-inner">
@@ -437,7 +488,7 @@
               <h4>PostgreSQL</h4>
               <span class="tech-category">Database</span>
             </div>
-            <div class="tech-level advanced">Advanced</div>
+            <div class="tech-level expert">Expert</div>
           </div>
           <div class="tech-details">
             <div class="tech-progress">
@@ -478,12 +529,335 @@
         </div>
       </div>
 
+      <!-- React Native -->
+      <div class="tech-card padd-15" data-category="mobile frontend">
+        <div class="tech-card-inner">
+          <div class="tech-header">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native" class="tech-logo">
+            <div class="tech-info">
+              <h4>React Native</h4>
+              <span class="tech-category">Mobile Framework</span>
+            </div>
+            <div class="tech-level advanced">Advanced</div>
+          </div>
+          <div class="tech-details">
+            <div class="tech-progress">
+              <div class="progress-bar" style="width: 75%"></div>
+            </div>
+            <div class="tech-stats">
+              <span class="stat-item">87% Accuracy</span>
+              <span class="stat-item">HearMeOut</span>
+              <span class="stat-item">500+ Users</span>
+            </div>
+            <p class="tech-description">ASL translation app, cross-platform mobile development, Firebase integration</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Android Studio -->
+      <div class="tech-card padd-15" data-category="mobile">
+        <div class="tech-card-inner">
+          <div class="tech-header">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android Studio" class="tech-logo">
+            <div class="tech-info">
+              <h4>Android Studio</h4>
+              <span class="tech-category">Mobile Development</span>
+            </div>
+            <div class="tech-level intermediate">Intermediate</div>
+          </div>
+          <div class="tech-details">
+            <div class="tech-progress">
+              <div class="progress-bar" style="width: 70%"></div>
+            </div>
+            <div class="tech-stats">
+              <span class="stat-item">Native Android</span>
+              <span class="stat-item">Java/Kotlin</span>
+              <span class="stat-item">Mobile Apps</span>
+            </div>
+            <p class="tech-description">Native Android development, mobile UI design, app deployment</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flowwise -->
+      <div class="tech-card padd-15" data-category="automation ai">
+        <div class="tech-card-inner">
+          <div class="tech-header">
+            <img src="https://docs.flowiseai.com/img/logo.svg" alt="Flowwise" class="tech-logo">
+            <div class="tech-info">
+              <h4>Flowwise</h4>
+              <span class="tech-category">AI Automation</span>
+            </div>
+            <div class="tech-level advanced">Advanced</div>
+          </div>
+          <div class="tech-details">
+            <div class="tech-progress">
+              <div class="progress-bar" style="width: 75%"></div>
+            </div>
+            <div class="tech-stats">
+              <span class="stat-item">AI Workflows</span>
+              <span class="stat-item">Enterprise</span>
+              <span class="stat-item">IAMAI</span>
+            </div>
+            <p class="tech-description">AI workflow automation, enterprise integration, intelligent process automation</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Make.com -->
+      <div class="tech-card padd-15" data-category="automation">
+        <div class="tech-card-inner">
+          <div class="tech-header">
+            <img src="https://www.make.com/en/help/image/loio7bf7d72a70934eb68b3dce4a099bc929_LowRes.png" alt="Make.com" class="tech-logo">
+            <div class="tech-info">
+              <h4>Make.com</h4>
+              <span class="tech-category">Workflow Automation</span>
+            </div>
+            <div class="tech-level advanced">Advanced</div>
+          </div>
+          <div class="tech-details">
+            <div class="tech-progress">
+              <div class="progress-bar" style="width: 80%"></div>
+            </div>
+            <div class="tech-stats">
+              <span class="stat-item">25+ Tools</span>
+              <span class="stat-item">10K+ Workflows</span>
+              <span class="stat-item">IAMAI</span>
+            </div>
+            <p class="tech-description">Enterprise automation platform, 25+ tool integrations, workflow orchestration</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- n8n -->
+      <div class="tech-card padd-15" data-category="automation">
+        <div class="tech-card-inner">
+          <div class="tech-header">
+            <img src="https://docs.n8n.io/assets/images/n8n-logo.png" alt="n8n" class="tech-logo">
+            <div class="tech-info">
+              <h4>n8n</h4>
+              <span class="tech-category">Workflow Automation</span>
+            </div>
+            <div class="tech-level intermediate">Intermediate</div>
+          </div>
+          <div class="tech-details">
+            <div class="tech-progress">
+              <div class="progress-bar" style="width: 70%"></div>
+            </div>
+            <div class="tech-stats">
+              <span class="stat-item">Open Source</span>
+              <span class="stat-item">Automation</span>
+              <span class="stat-item">Self-hosted</span>
+            </div>
+            <p class="tech-description">Open-source workflow automation, API integrations, custom automation solutions</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- HTML5 -->
+      <div class="tech-card padd-15" data-category="frontend">
+        <div class="tech-card-inner">
+          <div class="tech-header">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="tech-logo">
+            <div class="tech-info">
+              <h4>HTML5</h4>
+              <span class="tech-category">Markup Language</span>
+            </div>
+            <div class="tech-level expert">Expert</div>
+          </div>
+          <div class="tech-details">
+            <div class="tech-progress">
+              <div class="progress-bar" style="width: 92%"></div>
+            </div>
+            <div class="tech-stats">
+              <span class="stat-item">Semantic Web</span>
+              <span class="stat-item">Accessibility</span>
+              <span class="stat-item">Modern Web</span>
+            </div>
+            <p class="tech-description">Semantic markup, accessibility standards, modern web development</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CSS3 -->
+      <div class="tech-card padd-15" data-category="frontend">
+        <div class="tech-card-inner">
+          <div class="tech-header">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="tech-logo">
+            <div class="tech-info">
+              <h4>CSS3</h4>
+              <span class="tech-category">Styling Language</span>
+            </div>
+            <div class="tech-level expert">Expert</div>
+          </div>
+          <div class="tech-details">
+            <div class="tech-progress">
+              <div class="progress-bar" style="width: 88%"></div>
+            </div>
+            <div class="tech-stats">
+              <span class="stat-item">Responsive</span>
+              <span class="stat-item">Animations</span>
+              <span class="stat-item">Modern CSS</span>
+            </div>
+            <p class="tech-description">Responsive design, CSS Grid/Flexbox, animations, modern styling techniques</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Java -->
+      <div class="tech-card padd-15" data-category="core">
+        <div class="tech-card-inner">
+          <div class="tech-header">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="tech-logo">
+            <div class="tech-info">
+              <h4>Java</h4>
+              <span class="tech-category">Programming Language</span>
+            </div>
+            <div class="tech-level intermediate">Intermediate</div>
+          </div>
+          <div class="tech-details">
+            <div class="tech-progress">
+              <div class="progress-bar" style="width: 72%"></div>
+            </div>
+            <div class="tech-stats">
+              <span class="stat-item">Spring Boot</span>
+              <span class="stat-item">Enterprise</span>
+              <span class="stat-item">OOP</span>
+            </div>
+            <p class="tech-description">Spring Boot applications, enterprise development, object-oriented programming</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Git -->
+      <div class="tech-card padd-15" data-category="core expert">
+        <div class="tech-card-inner">
+          <div class="tech-header">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="tech-logo">
+            <div class="tech-info">
+              <h4>Git</h4>
+              <span class="tech-category">Version Control</span>
+            </div>
+            <div class="tech-level expert">Expert</div>
+          </div>
+          <div class="tech-details">
+            <div class="tech-progress">
+              <div class="progress-bar" style="width: 90%"></div>
+            </div>
+            <div class="tech-stats">
+              <span class="stat-item">Version Control</span>
+              <span class="stat-item">Collaboration</span>
+              <span class="stat-item">All Projects</span>
+            </div>
+            <p class="tech-description">Version control, branching strategies, collaborative development workflows</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PyTorch -->
+      <div class="tech-card padd-15" data-category="ai">
+        <div class="tech-card-inner">
+          <div class="tech-header">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" class="tech-logo">
+            <div class="tech-info">
+              <h4>PyTorch</h4>
+              <span class="tech-category">Deep Learning</span>
+            </div>
+            <div class="tech-level advanced">Advanced</div>
+          </div>
+          <div class="tech-details">
+            <div class="tech-progress">
+              <div class="progress-bar" style="width: 76%"></div>
+            </div>
+            <div class="tech-stats">
+              <span class="stat-item">Deep Learning</span>
+              <span class="stat-item">Research</span>
+              <span class="stat-item">Neural Networks</span>
+            </div>
+            <p class="tech-description">Deep learning research, neural network development, computer vision applications</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terraform -->
+      <div class="tech-card padd-15" data-category="cloud">
+        <div class="tech-card-inner">
+          <div class="tech-header">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform" class="tech-logo">
+            <div class="tech-info">
+              <h4>Terraform</h4>
+              <span class="tech-category">Infrastructure as Code</span>
+            </div>
+            <div class="tech-level advanced">Advanced</div>
+          </div>
+          <div class="tech-details">
+            <div class="tech-progress">
+              <div class="progress-bar" style="width: 74%"></div>
+            </div>
+            <div class="tech-stats">
+              <span class="stat-item">IaC</span>
+              <span class="stat-item">Cloud Automation</span>
+              <span class="stat-item">Production</span>
+            </div>
+            <p class="tech-description">Infrastructure automation, cloud resource management, deployment automation</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- AWS -->
+      <div class="tech-card padd-15" data-category="cloud">
+        <div class="tech-card-inner">
+          <div class="tech-header">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS" class="tech-logo">
+            <div class="tech-info">
+              <h4>AWS</h4>
+              <span class="tech-category">Cloud Platform</span>
+            </div>
+            <div class="tech-level intermediate">Intermediate</div>
+          </div>
+          <div class="tech-details">
+            <div class="tech-progress">
+              <div class="progress-bar" style="width: 68%"></div>
+            </div>
+            <div class="tech-stats">
+              <span class="stat-item">Cloud Services</span>
+              <span class="stat-item">Scalable</span>
+              <span class="stat-item">Enterprise</span>
+            </div>
+            <p class="tech-description">Cloud computing, serverless architecture, scalable infrastructure solutions</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Firebase -->
+      <div class="tech-card padd-15" data-category="mobile cloud">
+        <div class="tech-card-inner">
+          <div class="tech-header">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" class="tech-logo">
+            <div class="tech-info">
+              <h4>Firebase</h4>
+              <span class="tech-category">Backend as a Service</span>
+            </div>
+            <div class="tech-level advanced">Advanced</div>
+          </div>
+          <div class="tech-details">
+            <div class="tech-progress">
+              <div class="progress-bar" style="width: 79%"></div>
+            </div>
+            <div class="tech-stats">
+              <span class="stat-item">Real-time DB</span>
+              <span class="stat-item">Mobile Backend</span>
+              <span class="stat-item">HearMeOut</span>
+            </div>
+            <p class="tech-description">Real-time database, authentication, mobile app backend, cloud functions</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 <!-- ==== Technologies Section End ==== -->
-
-
 
 
         
