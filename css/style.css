@@ -7,6 +7,8 @@
   --text-black-900: #302e4d;
   --text-black-700: #504e70;
   --skin-color-rgb: 236, 24, 57; /* Add this for rgba usage */
+    --skin-color: #ec1839; /* Make sure this exists */
+
 }
 
 body {
@@ -2548,4 +2550,33 @@ body.dark .blog-modal-header {
 }
 
 
+
+/* TEMPORARY - ADD AT THE VERY END OF style.css */
+.blog.section {
+  background-color: #f2f2fc !important;
+  min-height: 100vh !important;
+  display: block !important;
+}
+
+.blog-item-inner {
+  background-color: #fdf9ff !important;
+  border: 2px solid #ec1839 !important;
+  border-radius: 15px !important;
+  padding: 20px !important;
+  margin-bottom: 20px !important;
+}
+
+.blog-filter-btn {
+  background-color: #fdf9ff !important;
+  border: 1px solid #e8dfec !important;
+  padding: 10px 20px !important;
+  border-radius: 25px !important;
+  margin: 5px !important;
+  cursor: pointer !important;
+}
+
+.blog-filter-btn.active {
+  background-color: #ec1839 !important;
+  color: white !important;
+}
 
