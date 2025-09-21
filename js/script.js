@@ -215,14 +215,14 @@ const translations = {
       "title": "AI Engineer Intern",
       "location": "IAMAI, Dubai, UAE",
       "company": "IAMAI",
-      "logo": "./images/logos/iamai.webp"
+      "logo": "../images/logos/iamai.webp"
     },
     {
       "date": "July 2024 - Aug. 2024", 
       "title": "Full-Stack Developer Intern",
       "location": "REDAL, Rabat, Morocco",
       "company": "REDAL",
-      "logo": "./images/logos/redal.webp"
+      "logo": "../images/logos/redal.webp"
     }
   ]
 },
@@ -715,10 +715,6 @@ experienceTimeline.innerHTML = experienceItems.map(item => `
         <h3 class="timeline-date"><em class="fa fa-calendar"></em> ${item.date}</h3>
         <h4 class="timeline-title">${item.title}</h4>
         <p class="timeline-text">${item.location}</p>
-        <p class="timeline-description">${item.description}</p>
-        <div class="timeline-achievements">
-          ${item.achievements.map(achievement => `<span class="achievement-tag">${achievement}</span>`).join('')}
-        </div>
       </div>
     </div>
   </div>
