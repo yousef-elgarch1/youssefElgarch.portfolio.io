@@ -142,7 +142,7 @@ const translations = {
   "Data Pipeline Engineer",
   "MLOps Engineer"
 ],
-      "description": "3rd-year Software Engineering student at ENSIAS specializing in Data Engineering & AI. I transform complex data challenges into scalable solutions, with proven experience building enterprise-grade systems at IAMAI Dubai and REDAL Morocco",
+      "description": "3rd-year ENSIAS student transforming real-world Human Challenges into scalable Tech Solutions through Data Science and Software Engineering. Available for end-of-study internships.",
       "name": "Elgarch Youssef",
       "birthdate": "Aug 14, 2002",
       "age": "22",
