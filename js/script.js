@@ -189,20 +189,24 @@ const translations = {
       "content": "Any questions? I am at your disposal"
     },
     "education": {
-      "title": "Education",
-      "timeline": [
-        {
-          "date": "Sept. 2023 - June. 2026",
-          "title": "Engineering Degree in Software Engineering",
-          "location": "ENSIAS, Rabat, Morocco"
-        },
-        {
-          "date": "Sept. 2021 - June 2023",
-          "title": "Preparatory Classes (Mathematics and Physics)",
-          "location": "CPGE, Moulay Youssef, Rabat, Morocco"
-        }
-      ]
+  "title": "Education",
+  "timeline": [
+    {
+      "date": "Sept. 2023 - June. 2026",
+      "title": "Engineering Degree in Software Engineering",
+      "location": "ENSIAS, Rabat, Morocco",
+      "institution": "ENSIAS",
+      "logo": "./images/logos/ensias.jfif"
     },
+    {
+      "date": "Sept. 2021 - June 2023",
+      "title": "Preparatory Classes (Mathematics and Physics)",
+      "location": "CPGE, Moulay Youssef, Rabat, Morocco",
+      "institution": "CPGE",
+      "logo": "./images/logos/cpge-logo.png"
+    }
+  ]
+},
     "experience": {
       "title": "Experience",
       "timeline": [
@@ -656,7 +660,8 @@ document.querySelector('.aside .nav li:nth-child(2) .nav-text').textContent = tr
 document.querySelector('.aside .nav li:nth-child(3) .nav-text').textContent = translations[lang].nav.technologies;
 document.querySelector('.aside .nav li:nth-child(4) .nav-text').textContent = translations[lang].nav.services;
 document.querySelector('.aside .nav li:nth-child(5) .nav-text').textContent = translations[lang].nav.portfolio;
-document.querySelector('.aside .nav li:nth-child(6) .nav-text').textContent = translations[lang].nav.contact;
+document.querySelector('.aside .nav li:nth-child(6) .nav-text').textContent = translations[lang].nav.blog;
+document.querySelector('.aside .nav li:nth-child(7) .nav-text').textContent = translations[lang].nav.contact;
 
   
   // Technologies Section
@@ -677,16 +682,22 @@ document.querySelector('.aside .nav li:nth-child(6) .nav-text').textContent = tr
   document.querySelector('.contact .contact-title').textContent = translations[lang].contact.content;
 
   // Education Timeline
-  const educationTimeline = document.querySelector('.about .education .timeline');
-  const educationItems = translations[lang].education.timeline;
-  educationTimeline.innerHTML = educationItems.map(item => `
-    <div class="timeline-item">
-      <div class="circle-dot"></div>
-      <h3 class="timeline-date"><em class="fa fa-calendar"></em> ${item.date}</h3>
-      <h4 class="timeline-title">${item.title}</h4>
-      <p class="timeline-text">${item.location}</p>
+// Education Timeline
+const educationTimeline = document.querySelector('.about .education .timeline');
+const educationItems = translations[lang].education.timeline;
+educationTimeline.innerHTML = educationItems.map(item => `
+  <div class="timeline-item">
+    <div class="circle-dot"></div>
+    <div class="institution-header">
+      <img src="${item.logo}" alt="${item.institution}" class="institution-logo">
+      <div class="timeline-content">
+        <h3 class="timeline-date"><em class="fa fa-calendar"></em> ${item.date}</h3>
+        <h4 class="timeline-title">${item.title}</h4>
+        <p class="timeline-text">${item.location}</p>
+      </div>
     </div>
-  `).join('');
+  </div>
+`).join('');
 
   // Experience Timeline
   const experienceTimeline = document.querySelector('.about .experience .timeline');
