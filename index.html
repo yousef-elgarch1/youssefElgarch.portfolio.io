@@ -865,46 +865,51 @@
           </div>
           <h3 class="contact-title padd-15">Any questions?</h3>
           <h4 class="contact-sub-title padd-15">I AM AT YOUR DISPOSAL</h4>
-          <div class="row">
-            <!-- ==== Contact info item Start ==== -->
-            <div class="contact-info-item padd-15">
-              <div class="icon"><em class="fa fa-phone"></em></div>
-              <h4>Call me</h4>
-              <p>+212 641881911</p>
-            </div>
-            <div class="contact-info-item padd-15">
-              <div class="icon"><em class="fa fa-envelope"></em></div>
-              <h4>Email</h4>
-              <p>youssefelgarch92@gmail.com</p>
-            </div>
-            <div class="contact-info-item padd-15">
-              <div class="icon"><em class="fa-brands fa-github"></em></div>
-              <h4>Github</h4>
-              <p>github.com/<br />yousef-elgarch1</p>
-            </div>
-            <div class="contact-info-item padd-15">
-              <div class="icon"><em class="fa-brands fa-linkedin"></em></div>
-              <h4>Linkedin</h4>
-              <p>https://www.linkedin.com/in/youssef-elgarch/</p>
-            </div>
-            <!-- ==== Contact info item End ==== -->
-          </div>
-          <h3 class="contact-title padd-15">SEND AN EMAIL</h3>
-          <h4 class="contact-sub-title padd-15">
-            I WILL BE HAPPY TO RESPOND
-          </h4>
-<form method="POST" action="send_email.php">
+<div class="row">
+  <!-- ==== Contact info item Start ==== -->
+  <div class="contact-info-item padd-15">
+    <div class="icon"><em class="fa fa-phone"></em></div>
+    <h4>Call me</h4>
+    <p><a href="tel:+212641881911">+212 641881911</a></p>
+  </div>
+  
+  <div class="contact-info-item padd-15">
+    <div class="icon"><em class="fa fa-envelope"></em></div>
+    <h4>Email</h4>
+    <p><a href="mailto:youssefelgarch92@gmail.com">youssefelgarch92@gmail.com</a></p>
+  </div>
+  
+  <div class="contact-info-item padd-15">
+    <div class="icon"><em class="fa-brands fa-github"></em></div>
+    <h4>Github</h4>
+    <p><a href="https://github.com/yousef-elgarch1" target="_blank">github.com/yousef-elgarch1</a></p>
+  </div>
+  
+  <div class="contact-info-item padd-15">
+    <div class="icon"><em class="fa-brands fa-linkedin"></em></div>
+    <h4>LinkedIn</h4>
+    <p><a href="https://www.linkedin.com/in/youssef-elgarch/" target="_blank">linkedin.com/in/youssef-elgarch</a></p>
+  </div>
+  <!-- ==== Contact info item End ==== -->
+</div>
+<h3 class="contact-title padd-15">SEND AN EMAIL</h3>
+<h4 class="contact-sub-title padd-15">I WILL BE HAPPY TO RESPOND</h4>
+
+<!-- Form Status Message -->
+<div id="form-status" class="form-status"></div>
+
+<form id="contact-form">
   <div class="row">
     <div class="contact-form padd-15">
       <div class="row">
         <div class="form-item col-6 padd-15">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Name" name="name" required />
+            <input type="text" class="form-control" placeholder="Name" name="from_name" required />
           </div>
         </div>
         <div class="form-item col-6 padd-15">
           <div class="form-group">
-            <input type="email" class="form-control" placeholder="Email" name="email" required />
+            <input type="email" class="form-control" placeholder="Email" name="from_email" required />
           </div>
         </div>
         <div class="form-item col-12 padd-15">
@@ -918,7 +923,7 @@
           </div>
         </div>
         <div class="form-item col-12 padd-15">
-          <button type="submit" class="btn">Send Message</button>
+          <button type="submit" class="btn" id="submit-btn">Send Message</button>
         </div>
       </div>
     </div>
@@ -955,6 +960,10 @@
     referrerpolicy="no-referrer"></script>
   <script src="./js/script.js"></script>
   <script src="./js/style-switcher.js"></script>
+
+
+        <!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </body>
 
 </html>
